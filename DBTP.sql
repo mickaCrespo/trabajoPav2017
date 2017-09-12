@@ -649,3 +649,55 @@ GO
 ALTER TABLE DetalleFactura SET (LOCK_ESCALATION = TABLE)
 GO
 COMMIT
+
+
+Insert Into Pacientes (dniPaciente, apellido,nombre,sexo,fechaNacimiento,telcontacto, baja)
+Values(93720820, 'Crespo','Mickaela','F', CONVERT(DATE, '11/03/1997', 103 ), '3515100391', 'F')
+
+Insert Into Pacientes (dniPaciente, apellido,nombre,sexo,fechaNacimiento,telcontacto, baja)
+Values(39697663, 'Garcia','Eliana Belen','F', CONVERT(DATE, '18/09/1996', 103 ), '2954311249', 'F')
+
+Insert Into Pacientes (dniPaciente, apellido,nombre,sexo,fechaNacimiento,telcontacto, baja)
+Values(40576275, 'Perez','Fugiliberto','M', CONVERT(DATE, '21/08/1998', 103 ), '3513101391', 'F')
+
+Insert Into Pacientes (dniPaciente, apellido,nombre,sexo,fechaNacimiento,telcontacto, baja)
+Values(16170265, 'Borello','Elizabeth','F', CONVERT(DATE, '04/07/1965', 103 ), '3512100361', 'T')
+
+
+Insert Into ObraSocial (idOS,nombre)
+Values(1, 'N/T')
+
+Insert Into ObraSocial (idOS,nombre)
+Values(2, 'OSPE')
+
+Insert Into ObraSocial (idOS,nombre)
+Values(3, 'OSDE')
+
+Insert Into ObraSocial (idOS,nombre)
+Values(4, 'DASPU')
+
+
+Insert Into Planes (idPlan,idObraSocial,nombre)
+Values(1,2,'Plan 110')
+
+Insert Into Planes (idPlan,idObraSocial,nombre)
+Values(1,3,'Plan Simple')
+
+Insert Into Planes (idPlan,idObraSocial,nombre)
+Values(2,2,'Plan 210')
+
+Insert Into Planes (idPlan,idObraSocial,nombre)
+Values(2,3,'Plan Premium')
+
+
+Insert into ObraSocialXPaciente (idNroAfiliado,idPlan,idObraSocial,dniPaciente)
+Values (1,2,2,93720820)
+
+Insert into ObraSocialXPaciente (idNroAfiliado,idPlan,idObraSocial,dniPaciente)
+Values (2,1,2,39697663)
+
+Insert into ObraSocialXPaciente (idNroAfiliado,idPlan,idObraSocial,dniPaciente)
+Values (0,0,1,40576275)
+
+Insert into ObraSocialXPaciente (idNroAfiliado,idPlan,idObraSocial,dniPaciente)
+Values (1,2,3,16170265)
