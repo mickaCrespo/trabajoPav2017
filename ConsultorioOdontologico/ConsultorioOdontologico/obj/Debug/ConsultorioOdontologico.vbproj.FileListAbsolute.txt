@@ -1,0 +1,11 @@
+C:\Users\Elu\Desktop\UTN\PAV\TP PAV\ConsultorioOdontologico\ConsultorioOdontologico\bin\Debug\ConsultorioOdontologico.exe.config
+C:\Users\Elu\Desktop\UTN\PAV\TP PAV\ConsultorioOdontologico\ConsultorioOdontologico\bin\Debug\ConsultorioOdontologico.exe
+C:\Users\Elu\Desktop\UTN\PAV\TP PAV\ConsultorioOdontologico\ConsultorioOdontologico\bin\Debug\ConsultorioOdontologico.pdb
+C:\Users\Elu\Desktop\UTN\PAV\TP PAV\ConsultorioOdontologico\ConsultorioOdontologico\bin\Debug\ConsultorioOdontologico.xml
+C:\Users\Elu\Desktop\UTN\PAV\TP PAV\ConsultorioOdontologico\ConsultorioOdontologico\obj\Debug\ConsultorioOdontologico.frmABMPacientes.resources
+C:\Users\Elu\Desktop\UTN\PAV\TP PAV\ConsultorioOdontologico\ConsultorioOdontologico\obj\Debug\ConsultorioOdontologico.Resources.resources
+C:\Users\Elu\Desktop\UTN\PAV\TP PAV\ConsultorioOdontologico\ConsultorioOdontologico\obj\Debug\ConsultorioOdontologico.vbproj.GenerateResource.Cache
+C:\Users\Elu\Desktop\UTN\PAV\TP PAV\ConsultorioOdontologico\ConsultorioOdontologico\obj\Debug\ConsultorioOdontologico.exe
+C:\Users\Elu\Desktop\UTN\PAV\TP PAV\ConsultorioOdontologico\ConsultorioOdontologico\obj\Debug\ConsultorioOdontologico.xml
+C:\Users\Elu\Desktop\UTN\PAV\TP PAV\ConsultorioOdontologico\ConsultorioOdontologico\obj\Debug\ConsultorioOdontologico.pdb
+C:\Users\Elu\Desktop\UTN\PAV\TP PAV\ConsultorioOdontologico\ConsultorioOdontologico\obj\Debug\ConsultorioOdontologico.frmMenu.resources
