@@ -121,7 +121,6 @@ CREATE TABLE dbo.ObraSocial
 	(
 	idOS int NOT NULL,
 	nombre varchar(50) NULL,
-	descripcion varchar(50) NULL
 	)  ON [PRIMARY]
 GO
 ALTER TABLE dbo.ObraSocial ADD CONSTRAINT
@@ -141,7 +140,6 @@ CREATE TABLE dbo.Planes
 	idPlan int NOT NULL,
 	idObraSocial int NOT NULL,
 	nombre varchar(50) NULL,
-	descripcion varchar(50) NULL
 	)  ON [PRIMARY]
 GO
 ALTER TABLE dbo.Planes ADD CONSTRAINT
@@ -234,6 +232,7 @@ CREATE TABLE dbo.Pacientes
 	sexo nchar(10) NULL,
 	fechaNacimiento date NULL,
 	telcontacto int NULL
+	baja nchar(10) DEFAULT 'F' 
 	)  ON [PRIMARY]
 GO
 ALTER TABLE dbo.Pacientes ADD CONSTRAINT
