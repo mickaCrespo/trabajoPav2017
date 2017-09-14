@@ -2,7 +2,7 @@
 
 Public Class BDHelper2
 
-    Private Shared string_conexion As String = "Data Source=localhost\SQLEXPRESS;Initial Catalog=db_consultorio_odontologico;Persist Security Info=True;User ID=sa;Password=19781996"
+    Private Shared string_conexion As String = "Data Source=maquis;Initial Catalog=db_consultorio_odontologico;User ID=avisuales1;Password=avisuales1"
 
     Private Shared Function EjecutarSQL(ByVal strSql As String) As Integer
         Dim conexion As New SqlConnection
@@ -49,7 +49,7 @@ Public Class BDHelper2
     Public Shared Function GetPacientes() As Data.DataTable
         Dim tabla As Data.DataTable
         Dim contador As Integer
-        Dim consulta As String = "SELECT  Pacientes.dniPaciente ,Pacientes.nombre , Pacientes.apellido, Pacientes.sexo , Pacientes.fechaNacimiento , Pacientes.telContacto , ObraSocial.nombre AS 'NombreOS', Planes.nombre AS 'NombrePlan', ObraSocialXPaciente.idNroAfiliado  FROM Pacientes JOIN ObraSocialXPaciente ON Pacientes.dniPaciente = ObraSocialXPaciente.dniPaciente JOIN ObraSocial ON ObraSocial.idOS = ObraSocialXPaciente.idObraSocial JOIN Planes ON Planes.idObraSocial = ObraSocialXPaciente.idObraSocial WHERE Pacientes.baja = 'F' ORDER BY Pacientes.apellido"
+        Dim consulta As String = "SELECT  Pacientes.dniPaciente ,Pacientes.nombre , Pacientes.apellido, Pacientes.sexo , Pacientes.fechaNacimiento , Pacientes.telContacto , ObraSocial.nombre AS 'NombreOS', Planes.nombre AS 'NombrePlan', ObraSocialXPaciente.idNroAfiliado  FROM (Pacientes JOIN ObraSocialXPaciente ON (Pacientes.dniPaciente = ObraSocialXPaciente.dniPaciente)) JOIN ObraSocial ON (ObraSocial.idOS = ObraSocialXPaciente.idObraSocial) JOIN Planes ON (Planes.idObraSocial = ObraSocialXPaciente.idObraSocial AND Planes.idPlan = ObraSocialXPaciente.idPlan ) WHERE Pacientes.baja = 'F' ORDER BY Pacientes.apellido"
 
         tabla = ConsultaSQL(consulta)
         contador = tabla.Rows.Count
@@ -62,7 +62,7 @@ Public Class BDHelper2
 
         Dim tabla As Data.DataTable
 
-        Dim consulta As String = "SELECT Pacientes.dniPaciente ,Pacientes.nombre , Pacientes.apellido, Pacientes.sexo , Pacientes.fechaNacimiento , Pacientes.telContacto , ObraSocial.nombre AS 'NombreOS', Planes.nombre AS 'NombrePlan', ObraSocialXPaciente.idNroAfiliado  FROM Pacientes JOIN ObraSocialXPaciente ON Pacientes.dniPaciente = ObraSocialXPaciente.dniPaciente JOIN ObraSocial ON ObraSocial.idOS = ObraSocialXPaciente.idObraSocial JOIN Planes ON Planes.idObraSocial = ObraSocialXPaciente.idObraSocial WHERE Pacientes.dniPaciente = " & dni & " AND Pacientes.baja = 'F'"
+        Dim consulta As String = "SELECT Pacientes.dniPaciente ,Pacientes.nombre , Pacientes.apellido, Pacientes.sexo , Pacientes.fechaNacimiento , Pacientes.telContacto , ObraSocial.nombre AS 'NombreOS', Planes.nombre AS 'NombrePlan', ObraSocialXPaciente.idNroAfiliado  FROM Pacientes JOIN ObraSocialXPaciente ON Pacientes.dniPaciente = ObraSocialXPaciente.dniPaciente JOIN ObraSocial ON ObraSocial.idOS = ObraSocialXPaciente.idObraSocial JOIN Planes ON (Planes.idObraSocial = ObraSocialXPaciente.idObraSocial AND Planes.idPlan = ObraSocialXPaciente.idPlan ) WHERE Pacientes.dniPaciente = " & dni & " AND Pacientes.baja = 'F'"
 
         tabla = ConsultaSQL(consulta)
 

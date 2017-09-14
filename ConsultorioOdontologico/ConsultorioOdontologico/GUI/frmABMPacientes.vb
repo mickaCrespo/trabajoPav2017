@@ -29,7 +29,7 @@
 
     Private Sub cmdConsultar_Click(sender As Object, e As EventArgs) Handles cmdConsultar.Click
 
-        Dim paciente = BDHelper2.GetPaciente(txtDNI.Text)
+        Dim paciente = BDHelper2.GetPaciente(mtxtDNI.Text)
         Dim P As New Paciente
         For Each fila As DataRow In paciente.Rows
             P.Apellido = fila.Item("Apellido")
@@ -57,8 +57,8 @@
 
     Private Sub cmdAgregar_Click(sender As Object, e As EventArgs) Handles cmdAgregar.Click
         Dim str As String = "INSERT INTO Pacientes (dniPaciente, apellido,nombre,sexo,fechaNacimiento,telcontacto, baja) VALUES("
-        str += txtDNI.Text & ", '" & txtApellido.Text & "','" & txtNombre.Text & "','"
-        If cmbSexo.DisplayMember = "Femenino" Then
+        str += mtxtDNI.Text & ", '" & txtApellido.Text & "','" & txtNombre.Text & "','"
+        If cmbSexo.SelectedIndex = 1 Then
             str += "F',"
         Else
             str += "M',"
@@ -69,9 +69,8 @@
 
 
         Dim str2 As String = "INSERT INTO ObraSocialXPaciente (idNroAfiliado,idPlan,idObraSocial,dniPaciente) VALUES("
-        str2 += txtNroAfiliado.Text & "," & cmbPlan.SelectedValue & "," & cmbOS.SelectedValue & "," & txtDNI.Text & ")"
-        MsgBox(cmbPlan.SelectedValue)
-        MsgBox(cmbOS.SelectedValue)
+        str2 += txtNroAfiliado.Text & "," & cmbPlan.SelectedValue & "," & cmbOS.SelectedValue & "," & mtxtDNI.Text & ")"
+
         BDHelper2.agregarObraSocialAPaciente(str2)
 
         MsgBox("El paciente se ha dado de alta correctamente")
@@ -87,12 +86,12 @@
 
     Private Sub cmdModificar_Click(sender As Object, e As EventArgs) Handles cmdModificar.Click
         Dim str As String = "UPDATE Pacientes SET apellido = '" & txtApellido.Text & "', nombre = '" & txtNombre.Text & "', sexo ='"
-        If cmbSexo.DisplayMember = "Femenino" Then
+        If cmbSexo.SelectedIndex = 1 Then
             str += "F',"
         Else
             str += "M',"
         End If
-        str += "fechaNacimiento = CONVERT(DATE,'" & mtxtDOB.Text & "', 103 ),telcontacto = '" & txtTelCont.Text & "' WHERE dniPaciente =" & txtDNI.Text
+        str += "fechaNacimiento = CONVERT(DATE,'" & mtxtDOB.Text & "', 103 ),telcontacto = '" & txtTelCont.Text & "' WHERE dniPaciente =" & mtxtDNI.Text
         BDHelper2.modificarPaciente(str)
         llenarGrid(BDHelper2.GetPacientes())
         MsgBox("La informacion del paciente ha sido actualizada")
@@ -101,11 +100,11 @@
 
     Private Sub dgvPacientes_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvPacientes.CellContentClick
 
-        txtDNI.Text = dgvPacientes.CurrentRow.Cells(0).Value
-        txtApellido.Text = dgvPacientes.CurrentRow.Cells(1).Value
-        txtNombre.Text = dgvPacientes.CurrentRow.Cells(2).Value
-        mtxtDOB.Text = dgvPacientes.CurrentRow.Cells(4).Value
-        txtTelCont.Text = dgvPacientes.CurrentRow.Cells(5).Value
+        'mtxtDNI.Text = dgvPacientes.CurrentRow.Cells(0).Value
+        'txtApellido.Text = dgvPacientes.CurrentRow.Cells(1).Value
+        'txtNombre.Text = dgvPacientes.CurrentRow.Cells(2).Value
+        'mtxtDOB.Text = dgvPacientes.CurrentRow.Cells(4).Value
+        'txtTelCont.Text = dgvPacientes.CurrentRow.Cells(5).Value
 
 
     End Sub
@@ -117,5 +116,36 @@
         BDHelper2.eliminarPaciente(str)
         llenarGrid(BDHelper2.GetPacientes())
         MsgBox("El paciente ha sido dado de baja exitosamente")
+    End Sub
+
+    Private Sub mtxtDNI_LostFocus(sender As Object, e As EventArgs) Handles mtxtDNI.LostFocus
+    End Sub
+
+
+
+    Private Sub mtxtDNI_TextChanged(sender As Object, e As EventArgs) Handles mtxtDNI.TextChanged
+
+    End Sub
+
+ 
+    Private Sub mtxtDNI_(sender As Object, e As MaskInputRejectedEventArgs) Handles mtxtDNI.MaskInputRejected
+
+    End Sub
+
+    Private Sub cmdBorrarCampos_Click(sender As Object, e As EventArgs) Handles cmdBorrarCampos.Click
+        mtxtDNI.Text = ""
+        txtApellido.Text = ""
+        txtNombre.Text = ""
+        txtTelCont.Text = ""
+        mtxtDOB.Text = ""
+
+    End Sub
+
+    Private Sub dgvPacientes_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvPacientes.CellClick
+        mtxtDNI.Text = dgvPacientes.CurrentRow.Cells(0).Value
+        txtApellido.Text = dgvPacientes.CurrentRow.Cells(1).Value
+        txtNombre.Text = dgvPacientes.CurrentRow.Cells(2).Value
+        mtxtDOB.Text = dgvPacientes.CurrentRow.Cells(4).Value
+        txtTelCont.Text = dgvPacientes.CurrentRow.Cells(5).Value
     End Sub
 End Class
