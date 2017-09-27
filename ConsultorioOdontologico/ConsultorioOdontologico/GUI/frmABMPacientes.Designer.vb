@@ -46,11 +46,6 @@ Partial Class frmABMPacientes
         Me.grbOS = New System.Windows.Forms.GroupBox()
         Me.cmdConsultar = New System.Windows.Forms.Button()
         Me.dgvPacientes = New System.Windows.Forms.DataGridView()
-        Me.cmdAgregar = New System.Windows.Forms.Button()
-        Me.cmdModificar = New System.Windows.Forms.Button()
-        Me.cmdEliminar = New System.Windows.Forms.Button()
-        Me.cmdSalir = New System.Windows.Forms.Button()
-        Me.cmdBorrarCampos = New System.Windows.Forms.Button()
         Me.DNI = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Apellido = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -60,6 +55,11 @@ Partial Class frmABMPacientes
         Me.OS = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Plan = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NroAfiliado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cmdAgregar = New System.Windows.Forms.Button()
+        Me.cmdModificar = New System.Windows.Forms.Button()
+        Me.cmdEliminar = New System.Windows.Forms.Button()
+        Me.cmdSalir = New System.Windows.Forms.Button()
+        Me.cmdBorrarCampos = New System.Windows.Forms.Button()
         Me.grbPacientes.SuspendLayout()
         Me.grbOS.SuspendLayout()
         CType(Me.dgvPacientes, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -281,8 +281,77 @@ Partial Class frmABMPacientes
         Me.dgvPacientes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DNI, Me.Apellido, Me.Nombre, Me.Sexo, Me.DOB, Me.TelCont, Me.OS, Me.Plan, Me.NroAfiliado})
         Me.dgvPacientes.Location = New System.Drawing.Point(12, 297)
         Me.dgvPacientes.Name = "dgvPacientes"
+        Me.dgvPacientes.ReadOnly = True
         Me.dgvPacientes.Size = New System.Drawing.Size(610, 150)
         Me.dgvPacientes.TabIndex = 21
+        '
+        'DNI
+        '
+        Me.DNI.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
+        Me.DNI.FillWeight = 70.0!
+        Me.DNI.HeaderText = "     DNI     "
+        Me.DNI.Name = "DNI"
+        Me.DNI.ReadOnly = True
+        Me.DNI.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DNI.Width = 81
+        '
+        'Apellido
+        '
+        Me.Apellido.HeaderText = "Apellido"
+        Me.Apellido.Name = "Apellido"
+        Me.Apellido.ReadOnly = True
+        Me.Apellido.Width = 69
+        '
+        'Nombre
+        '
+        Me.Nombre.HeaderText = "Nombre"
+        Me.Nombre.Name = "Nombre"
+        Me.Nombre.ReadOnly = True
+        Me.Nombre.Width = 69
+        '
+        'Sexo
+        '
+        Me.Sexo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
+        Me.Sexo.HeaderText = "Sexo"
+        Me.Sexo.Name = "Sexo"
+        Me.Sexo.ReadOnly = True
+        Me.Sexo.Width = 56
+        '
+        'DOB
+        '
+        Me.DOB.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.DOB.HeaderText = "Fecha de Nacimiento"
+        Me.DOB.Name = "DOB"
+        Me.DOB.ReadOnly = True
+        Me.DOB.Width = 133
+        '
+        'TelCont
+        '
+        Me.TelCont.HeaderText = "Teléfono"
+        Me.TelCont.Name = "TelCont"
+        Me.TelCont.ReadOnly = True
+        Me.TelCont.Width = 74
+        '
+        'OS
+        '
+        Me.OS.HeaderText = "Obra Social"
+        Me.OS.Name = "OS"
+        Me.OS.ReadOnly = True
+        Me.OS.Width = 87
+        '
+        'Plan
+        '
+        Me.Plan.HeaderText = "Plan"
+        Me.Plan.Name = "Plan"
+        Me.Plan.ReadOnly = True
+        Me.Plan.Width = 53
+        '
+        'NroAfiliado
+        '
+        Me.NroAfiliado.HeaderText = "Número de Afiliado"
+        Me.NroAfiliado.Name = "NroAfiliado"
+        Me.NroAfiliado.ReadOnly = True
+        Me.NroAfiliado.Width = 121
         '
         'cmdAgregar
         '
@@ -328,65 +397,6 @@ Partial Class frmABMPacientes
         Me.cmdBorrarCampos.TabIndex = 26
         Me.cmdBorrarCampos.Text = "Borrar campos"
         Me.cmdBorrarCampos.UseVisualStyleBackColor = True
-        '
-        'DNI
-        '
-        Me.DNI.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
-        Me.DNI.FillWeight = 70.0!
-        Me.DNI.HeaderText = "     DNI     "
-        Me.DNI.Name = "DNI"
-        Me.DNI.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DNI.Width = 81
-        '
-        'Apellido
-        '
-        Me.Apellido.HeaderText = "Apellido"
-        Me.Apellido.Name = "Apellido"
-        Me.Apellido.Width = 69
-        '
-        'Nombre
-        '
-        Me.Nombre.HeaderText = "Nombre"
-        Me.Nombre.Name = "Nombre"
-        Me.Nombre.Width = 69
-        '
-        'Sexo
-        '
-        Me.Sexo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
-        Me.Sexo.HeaderText = "Sexo"
-        Me.Sexo.Name = "Sexo"
-        Me.Sexo.Width = 56
-        '
-        'DOB
-        '
-        Me.DOB.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.DOB.HeaderText = "Fecha de Nacimiento"
-        Me.DOB.Name = "DOB"
-        Me.DOB.Width = 133
-        '
-        'TelCont
-        '
-        Me.TelCont.HeaderText = "Teléfono"
-        Me.TelCont.Name = "TelCont"
-        Me.TelCont.Width = 74
-        '
-        'OS
-        '
-        Me.OS.HeaderText = "Obra Social"
-        Me.OS.Name = "OS"
-        Me.OS.Width = 87
-        '
-        'Plan
-        '
-        Me.Plan.HeaderText = "Plan"
-        Me.Plan.Name = "Plan"
-        Me.Plan.Width = 53
-        '
-        'NroAfiliado
-        '
-        Me.NroAfiliado.HeaderText = "Número de Afiliado"
-        Me.NroAfiliado.Name = "NroAfiliado"
-        Me.NroAfiliado.Width = 121
         '
         'frmABMPacientes
         '

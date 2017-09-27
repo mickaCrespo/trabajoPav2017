@@ -4,7 +4,18 @@
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles cmdPacientes.Click
+    Private Sub cmdPacientes_Click(sender As Object, e As EventArgs) Handles cmdPacientes.Click
         frmABMPacientes.ShowDialog()
     End Sub
+
+    Private Sub cmdOdontologos_Click(sender As Object, e As EventArgs) Handles cmdOdontologos.Click
+        frmABMOdontologos.ShowDialog()
+    End Sub
+
+    Private Sub cmdOS_Click(sender As Object, e As EventArgs) Handles cmdOS.Click
+        frmObraSocial.ShowDialog()
+    End Sub
+
+
+
 End Class

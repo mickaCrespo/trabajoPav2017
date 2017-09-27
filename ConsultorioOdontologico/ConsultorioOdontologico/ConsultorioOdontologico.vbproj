@@ -70,7 +70,32 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\Odontologo.vb" />
+    <Compile Include="GUI\frmAgregarEspecialidad.Designer.vb">
+      <DependentUpon>frmAgregarEspecialidad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmAgregarEspecialidad.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Clases\Paciente.vb" />
+    <Compile Include="GUI\Obra Social\frmAgregarPlanesEnObraSocial.Designer.vb">
+      <DependentUpon>frmAgregarPlanesEnObraSocial.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Obra Social\frmAgregarPlanesEnObraSocial.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Obra Social\frmAgregarObraSocial.Designer.vb">
+      <DependentUpon>frmAgregarObraSocial.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Obra Social\frmAgregarObraSocial.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Obra Social\frmAgregarPrestacionInexistente.Designer.vb">
+      <DependentUpon>frmAgregarPrestacionInexistente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Obra Social\frmAgregarPrestacionInexistente.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GUI\frmABMPacientes.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -78,10 +103,34 @@
       <DependentUpon>frmABMPacientes.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GUI\Odontologos\ABMEspecialidades.Designer.vb">
+      <DependentUpon>ABMEspecialidades.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Odontologos\ABMEspecialidades.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Odontologos\frmABMOdontologos.Designer.vb">
+      <DependentUpon>frmABMOdontologos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Odontologos\frmABMOdontologos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Obra Social\frmAgregarPrestacionPorPlan.Designer.vb">
+      <DependentUpon>frmAgregarPrestacionPorPlan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Obra Social\frmAgregarPrestacionPorPlan.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GUI\frmMenu.Designer.vb">
       <DependentUpon>frmMenu.vb</DependentUpon>
     </Compile>
     <Compile Include="GUI\frmMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Obra Social\frmObraSocial.Designer.vb">
+      <DependentUpon>frmObraSocial.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Obra Social\frmObraSocial.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Helper\BDHelper2.vb" />
@@ -102,11 +151,35 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GUI\frmAgregarEspecialidad.resx">
+      <DependentUpon>frmAgregarEspecialidad.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmABMPacientes.resx">
       <DependentUpon>frmABMPacientes.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Obra Social\frmAgregarPlanesEnObraSocial.resx">
+      <DependentUpon>frmAgregarPlanesEnObraSocial.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Obra Social\frmAgregarObraSocial.resx">
+      <DependentUpon>frmAgregarObraSocial.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Obra Social\frmAgregarPrestacionInexistente.resx">
+      <DependentUpon>frmAgregarPrestacionInexistente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Odontologos\ABMEspecialidades.resx">
+      <DependentUpon>ABMEspecialidades.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Odontologos\frmABMOdontologos.resx">
+      <DependentUpon>frmABMOdontologos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Obra Social\frmAgregarPrestacionPorPlan.resx">
+      <DependentUpon>frmAgregarPrestacionPorPlan.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmMenu.resx">
       <DependentUpon>frmMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Obra Social\frmObraSocial.resx">
+      <DependentUpon>frmObraSocial.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

@@ -73,7 +73,7 @@
 
         BDHelper2.agregarObraSocialAPaciente(str2)
 
-        MsgBox("El paciente se ha dado de alta correctamente")
+        MsgBox("El paciente se ha dado de alta")
 
         llenarGrid(BDHelper2.GetPacientes())
 
@@ -118,19 +118,6 @@
         MsgBox("El paciente ha sido dado de baja exitosamente")
     End Sub
 
-    Private Sub mtxtDNI_LostFocus(sender As Object, e As EventArgs) Handles mtxtDNI.LostFocus
-    End Sub
-
-
-
-    Private Sub mtxtDNI_TextChanged(sender As Object, e As EventArgs) Handles mtxtDNI.TextChanged
-
-    End Sub
-
- 
-    Private Sub mtxtDNI_(sender As Object, e As MaskInputRejectedEventArgs) Handles mtxtDNI.MaskInputRejected
-
-    End Sub
 
     Private Sub cmdBorrarCampos_Click(sender As Object, e As EventArgs) Handles cmdBorrarCampos.Click
         mtxtDNI.Text = ""
@@ -148,4 +135,8 @@
         mtxtDOB.Text = dgvPacientes.CurrentRow.Cells(4).Value
         txtTelCont.Text = dgvPacientes.CurrentRow.Cells(5).Value
     End Sub
+
+
+
+
 End Class
