@@ -66,7 +66,7 @@
     End Sub
 
     Private Sub cmbNombreOS_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbNombreOS.SelectedIndexChanged
-        CargarCombo(cmbNombrePlan, BDHelper2.GetPlan(cmbNombreOS.SelectedIndex + 1), "idPlan", "nombre")
+        CargarCombo(cmbNombrePlan, BDHelper2.GetPlan(cmbNombreOS.SelectedIndex), "idPlan", "nombre")
 
 
     End Sub

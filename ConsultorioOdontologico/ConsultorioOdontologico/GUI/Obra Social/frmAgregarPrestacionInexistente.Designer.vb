@@ -31,7 +31,7 @@ Partial Class frmAgregarPrestacionInexistente
         Me.lblDuracion = New System.Windows.Forms.Label()
         Me.lblPrecio = New System.Windows.Forms.Label()
         Me.lblNombre = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dgvPrestaciones = New System.Windows.Forms.DataGridView()
         Me.idPrestacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -40,7 +40,7 @@ Partial Class frmAgregarPrestacionInexistente
         Me.cmdAgregar = New System.Windows.Forms.Button()
         Me.cmdSalir = New System.Windows.Forms.Button()
         Me.grbPrestaciones.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvPrestaciones, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'grbPrestaciones
@@ -125,14 +125,14 @@ Partial Class frmAgregarPrestacionInexistente
         Me.lblNombre.TabIndex = 0
         Me.lblNombre.Text = "Nombre"
         '
-        'DataGridView1
+        'dgvPrestaciones
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idPrestacion, Me.nombre, Me.precio, Me.duracion, Me.descripcion})
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 273)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(556, 164)
-        Me.DataGridView1.TabIndex = 1
+        Me.dgvPrestaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvPrestaciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idPrestacion, Me.nombre, Me.precio, Me.duracion, Me.descripcion})
+        Me.dgvPrestaciones.Location = New System.Drawing.Point(12, 273)
+        Me.dgvPrestaciones.Name = "dgvPrestaciones"
+        Me.dgvPrestaciones.Size = New System.Drawing.Size(556, 164)
+        Me.dgvPrestaciones.TabIndex = 1
         '
         'idPrestacion
         '
@@ -189,13 +189,13 @@ Partial Class frmAgregarPrestacionInexistente
         Me.ClientSize = New System.Drawing.Size(594, 519)
         Me.Controls.Add(Me.cmdSalir)
         Me.Controls.Add(Me.cmdAgregar)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.dgvPrestaciones)
         Me.Controls.Add(Me.grbPrestaciones)
         Me.Name = "frmAgregarPrestacionInexistente"
         Me.Text = "Prestaciones"
         Me.grbPrestaciones.ResumeLayout(False)
         Me.grbPrestaciones.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvPrestaciones, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -207,7 +207,7 @@ Partial Class frmAgregarPrestacionInexistente
     Friend WithEvents lblDuracion As System.Windows.Forms.Label
     Friend WithEvents lblPrecio As System.Windows.Forms.Label
     Friend WithEvents lblNombre As System.Windows.Forms.Label
-    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
+    Friend WithEvents dgvPrestaciones As System.Windows.Forms.DataGridView
     Friend WithEvents idPrestacion As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents nombre As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents precio As System.Windows.Forms.DataGridViewTextBoxColumn

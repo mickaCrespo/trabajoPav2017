@@ -23,6 +23,8 @@
 
     Private Sub cmdAgregar_Click(sender As Object, e As EventArgs) Handles cmdAgregar.Click
 
+        Dim OSSel = cmbOS.SelectedIndex + 1
+        Dim PlanSel = cmbPlan.SelectedIndex + 1
         Dim str As String = "INSERT INTO PrestacionesPorPlan (idPlan, idObraSocial,idPrestacion,montoCubierto) VALUES ("
         str += cmbPlan.SelectedValue & ", '" & cmbOS.SelectedValue & "','" & cmbPrestacion.SelectedValue & "'," & txtMontoCubierto.Text & ")"
 

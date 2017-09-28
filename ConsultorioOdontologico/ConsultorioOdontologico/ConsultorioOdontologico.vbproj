@@ -71,10 +71,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\Odontologo.vb" />
-    <Compile Include="GUI\frmAgregarEspecialidad.Designer.vb">
+    <Compile Include="GUI\Odontologos\frmAgregarEspecialidad.Designer.vb">
       <DependentUpon>frmAgregarEspecialidad.vb</DependentUpon>
     </Compile>
-    <Compile Include="GUI\frmAgregarEspecialidad.vb">
+    <Compile Include="GUI\Odontologos\frmAgregarEspecialidad.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Clases\Paciente.vb" />
@@ -151,7 +151,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="GUI\frmAgregarEspecialidad.resx">
+    <EmbeddedResource Include="GUI\Odontologos\frmAgregarEspecialidad.resx">
       <DependentUpon>frmAgregarEspecialidad.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmABMPacientes.resx">

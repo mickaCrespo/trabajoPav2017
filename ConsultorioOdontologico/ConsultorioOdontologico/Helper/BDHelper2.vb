@@ -2,7 +2,7 @@
 
 Public Class BDHelper2
 
-    Private Shared string_conexion As String = "Data Source=DESKTOP-I4BBJMS\SQLEXPRESS;Initial Catalog=db_consultorio_odontologico;User ID=sa;Password=19781996"
+    Private Shared string_conexion As String = "Data Source=maquis;Initial Catalog=db_consultorio_odontologico;User ID=avisuales1;Password=avisuales1"
 
     Private Shared Function EjecutarSQL(ByVal strSql As String) As Integer
         Dim conexion As New SqlConnection
@@ -113,7 +113,7 @@ Public Class BDHelper2
 
     Public Shared Function GetPrestacionesParaGrilla(ByVal PlanSeleccionado As Integer, ByVal OSSeleccionada As Integer) As Data.DataTable
         Dim tabla As Data.DataTable
-        Dim consulta As String = "SELECT PPP.idPlan, PPP.idObraSocial,PPP.idPrestacion, P.nombre, P.descripcion, P.precio, PPP.montoCubierto, P.duracion FROM Prestaciones P JOIN PrestacionesPorPlan PPP ON (P.idPrestacion = PPP.idPrestacion) WHERE (PPP.idObraSocial = " & OSSeleccionada & " AND PPP.idPlan = " & PlanSeleccionado & " ORDER BY P.nombre)"
+        Dim consulta As String = "SELECT PPP.idPlan, PPP.idObraSocial,PPP.idPrestacion, P.nombre, P.descripcion, P.precio, PPP.montoCubierto, P.duracion FROM Prestaciones P JOIN PrestacionesPorPlan PPP ON (P.idPrestacion = PPP.idPrestacion) WHERE (PPP.idObraSocial = " & OSSeleccionada & " AND PPP.idPlan = " & PlanSeleccionado & ") ORDER BY P.nombre"
 
         tabla = ConsultaSQL(consulta)
 
@@ -125,7 +125,7 @@ Public Class BDHelper2
 
         Dim strSQL As String = "SELECT P.idPrestacion, P.nombre FROM Prestaciones P WHERE P.idPrestacion NOT IN ("
         strSQL += "SELECT P.idPrestacion FROM Prestaciones P LEFT JOIN PrestacionesPorPlan PPP ON (P.idPrestacion = PPP.idPrestacion)"
-        strSQL += "WHERE (PPP.idObraSocial  = " & OSSeleccionada & ") AND (PPP.idPlan = " & PlanSeleccionado & "))"
+        strSQL += "WHERE (PPP.idObraSocial  = " & OSSeleccionada & ") OR (PPP.idPlan = " & PlanSeleccionado & "))"
         Return BDHelper2.ConsultaSQL(strSQL)
     End Function
 

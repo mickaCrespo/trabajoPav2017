@@ -50,3 +50,11 @@ D:\TP PAV\ConsultorioOdontologico\ConsultorioOdontologico\obj\Debug\ConsultorioO
 D:\TP PAV\ConsultorioOdontologico\ConsultorioOdontologico\obj\Debug\ConsultorioOdontologico.frmAgregarPrestacionInexistente.resources
 D:\TP PAV\ConsultorioOdontologico\ConsultorioOdontologico\obj\Debug\ConsultorioOdontologico.frmAgregarObraSocial.resources
 D:\TP PAV\ConsultorioOdontologico\ConsultorioOdontologico\obj\Debug\ConsultorioOdontologico.frmAgregarPlanesEnObraSocial.resources
+G:\TP PAV\ConsultorioOdontologico\ConsultorioOdontologico\obj\Debug\ConsultorioOdontologico.frmAgregarEspecialidad.resources
+G:\TP PAV\ConsultorioOdontologico\ConsultorioOdontologico\obj\Debug\ConsultorioOdontologico.frmAgregarPlanesEnObraSocial.resources
+G:\TP PAV\ConsultorioOdontologico\ConsultorioOdontologico\obj\Debug\ConsultorioOdontologico.frmAgregarObraSocial.resources
+G:\TP PAV\ConsultorioOdontologico\ConsultorioOdontologico\obj\Debug\ConsultorioOdontologico.frmAgregarPrestacionInexistente.resources
+G:\TP PAV\ConsultorioOdontologico\ConsultorioOdontologico\obj\Debug\ConsultorioOdontologico.ABMEspecialidades.resources
+G:\TP PAV\ConsultorioOdontologico\ConsultorioOdontologico\obj\Debug\ConsultorioOdontologico.frmABMOdontologos.resources
+G:\TP PAV\ConsultorioOdontologico\ConsultorioOdontologico\obj\Debug\ConsultorioOdontologico.frmAgregarPrestacionPorPlan.resources
+G:\TP PAV\ConsultorioOdontologico\ConsultorioOdontologico\obj\Debug\ConsultorioOdontologico.frmObraSocial.resources

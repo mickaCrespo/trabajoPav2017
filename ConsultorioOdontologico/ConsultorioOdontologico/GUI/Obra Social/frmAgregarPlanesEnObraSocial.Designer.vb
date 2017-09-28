@@ -58,6 +58,7 @@ Partial Class frmAgregarPlanesEnObraSocial
         '
         'cmbOS
         '
+        Me.cmbOS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbOS.FormattingEnabled = True
         Me.cmbOS.Location = New System.Drawing.Point(143, 32)
         Me.cmbOS.Name = "cmbOS"
