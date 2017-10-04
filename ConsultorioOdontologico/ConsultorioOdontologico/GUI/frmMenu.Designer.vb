@@ -25,7 +25,7 @@ Partial Class frmMenu
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMenu))
         Me.cmdPacientes = New System.Windows.Forms.Button()
         Me.cmdTurnos = New System.Windows.Forms.Button()
-        Me.cmdHistoriaClinica = New System.Windows.Forms.Button()
+        Me.cmdInformes = New System.Windows.Forms.Button()
         Me.cmdOdontologos = New System.Windows.Forms.Button()
         Me.cmdFacturacion = New System.Windows.Forms.Button()
         Me.cmdOS = New System.Windows.Forms.Button()
@@ -51,15 +51,15 @@ Partial Class frmMenu
         Me.cmdTurnos.Text = "Turnos"
         Me.cmdTurnos.UseVisualStyleBackColor = True
         '
-        'cmdHistoriaClinica
+        'cmdInformes
         '
-        Me.cmdHistoriaClinica.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdHistoriaClinica.Location = New System.Drawing.Point(12, 260)
-        Me.cmdHistoriaClinica.Name = "cmdHistoriaClinica"
-        Me.cmdHistoriaClinica.Size = New System.Drawing.Size(113, 50)
-        Me.cmdHistoriaClinica.TabIndex = 3
-        Me.cmdHistoriaClinica.Text = "Historia Clínica"
-        Me.cmdHistoriaClinica.UseVisualStyleBackColor = True
+        Me.cmdInformes.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdInformes.Location = New System.Drawing.Point(12, 260)
+        Me.cmdInformes.Name = "cmdInformes"
+        Me.cmdInformes.Size = New System.Drawing.Size(113, 50)
+        Me.cmdInformes.TabIndex = 3
+        Me.cmdInformes.Text = "Informes"
+        Me.cmdInformes.UseVisualStyleBackColor = True
         '
         'cmdOdontologos
         '
@@ -102,7 +102,7 @@ Partial Class frmMenu
         Me.Controls.Add(Me.cmdOS)
         Me.Controls.Add(Me.cmdFacturacion)
         Me.Controls.Add(Me.cmdOdontologos)
-        Me.Controls.Add(Me.cmdHistoriaClinica)
+        Me.Controls.Add(Me.cmdInformes)
         Me.Controls.Add(Me.cmdTurnos)
         Me.Controls.Add(Me.cmdPacientes)
         Me.DoubleBuffered = True
@@ -114,7 +114,7 @@ Partial Class frmMenu
     End Sub
     Friend WithEvents cmdPacientes As System.Windows.Forms.Button
     Friend WithEvents cmdTurnos As System.Windows.Forms.Button
-    Friend WithEvents cmdHistoriaClinica As System.Windows.Forms.Button
+    Friend WithEvents cmdInformes As System.Windows.Forms.Button
     Friend WithEvents cmdOdontologos As System.Windows.Forms.Button
     Friend WithEvents cmdFacturacion As System.Windows.Forms.Button
     Friend WithEvents cmdOS As System.Windows.Forms.Button

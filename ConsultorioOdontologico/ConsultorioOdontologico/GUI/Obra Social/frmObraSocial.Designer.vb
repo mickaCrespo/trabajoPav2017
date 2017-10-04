@@ -74,9 +74,9 @@ Partial Class frmObraSocial
         Me.lblNombreOS.AutoSize = True
         Me.lblNombreOS.Location = New System.Drawing.Point(29, 27)
         Me.lblNombreOS.Name = "lblNombreOS"
-        Me.lblNombreOS.Size = New System.Drawing.Size(44, 13)
+        Me.lblNombreOS.Size = New System.Drawing.Size(51, 13)
         Me.lblNombreOS.TabIndex = 2
-        Me.lblNombreOS.Text = "Nombre"
+        Me.lblNombreOS.Text = "* Nombre"
         '
         'cmdAgregarOS
         '
@@ -113,9 +113,9 @@ Partial Class frmObraSocial
         Me.lblNombrePlan.AutoSize = True
         Me.lblNombrePlan.Location = New System.Drawing.Point(29, 32)
         Me.lblNombrePlan.Name = "lblNombrePlan"
-        Me.lblNombrePlan.Size = New System.Drawing.Size(44, 13)
+        Me.lblNombrePlan.Size = New System.Drawing.Size(51, 13)
         Me.lblNombrePlan.TabIndex = 2
-        Me.lblNombrePlan.Text = "Nombre"
+        Me.lblNombrePlan.Text = "* Nombre"
         '
         'cmdAgregarPlan
         '

@@ -32,9 +32,9 @@ Partial Class frmAgregarObraSocial
         Me.lblNombre.AutoSize = True
         Me.lblNombre.Location = New System.Drawing.Point(21, 41)
         Me.lblNombre.Name = "lblNombre"
-        Me.lblNombre.Size = New System.Drawing.Size(44, 13)
+        Me.lblNombre.Size = New System.Drawing.Size(51, 13)
         Me.lblNombre.TabIndex = 0
-        Me.lblNombre.Text = "Nombre"
+        Me.lblNombre.Text = "* Nombre"
         '
         'txtNombre
         '

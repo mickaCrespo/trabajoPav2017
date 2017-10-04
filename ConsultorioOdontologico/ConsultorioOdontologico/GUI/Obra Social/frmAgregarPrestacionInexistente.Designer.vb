@@ -32,13 +32,13 @@ Partial Class frmAgregarPrestacionInexistente
         Me.lblPrecio = New System.Windows.Forms.Label()
         Me.lblNombre = New System.Windows.Forms.Label()
         Me.dgvPrestaciones = New System.Windows.Forms.DataGridView()
-        Me.idPrestacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.duracion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cmdAgregar = New System.Windows.Forms.Button()
         Me.cmdSalir = New System.Windows.Forms.Button()
+        Me.idPrestacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.duracion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.grbPrestaciones.SuspendLayout()
         CType(Me.dgvPrestaciones, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -103,65 +103,36 @@ Partial Class frmAgregarPrestacionInexistente
         Me.lblDuracion.AutoSize = True
         Me.lblDuracion.Location = New System.Drawing.Point(23, 107)
         Me.lblDuracion.Name = "lblDuracion"
-        Me.lblDuracion.Size = New System.Drawing.Size(50, 13)
+        Me.lblDuracion.Size = New System.Drawing.Size(57, 13)
         Me.lblDuracion.TabIndex = 2
-        Me.lblDuracion.Text = "Duracion"
+        Me.lblDuracion.Text = "* Duracion"
         '
         'lblPrecio
         '
         Me.lblPrecio.AutoSize = True
         Me.lblPrecio.Location = New System.Drawing.Point(23, 72)
         Me.lblPrecio.Name = "lblPrecio"
-        Me.lblPrecio.Size = New System.Drawing.Size(37, 13)
+        Me.lblPrecio.Size = New System.Drawing.Size(44, 13)
         Me.lblPrecio.TabIndex = 1
-        Me.lblPrecio.Text = "Precio"
+        Me.lblPrecio.Text = "* Precio"
         '
         'lblNombre
         '
         Me.lblNombre.AutoSize = True
         Me.lblNombre.Location = New System.Drawing.Point(23, 41)
         Me.lblNombre.Name = "lblNombre"
-        Me.lblNombre.Size = New System.Drawing.Size(44, 13)
+        Me.lblNombre.Size = New System.Drawing.Size(51, 13)
         Me.lblNombre.TabIndex = 0
-        Me.lblNombre.Text = "Nombre"
+        Me.lblNombre.Text = "* Nombre"
         '
         'dgvPrestaciones
         '
         Me.dgvPrestaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvPrestaciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idPrestacion, Me.nombre, Me.precio, Me.duracion, Me.descripcion})
+        Me.dgvPrestaciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idPrestacion, Me.nombre, Me.descripcion, Me.precio, Me.duracion})
         Me.dgvPrestaciones.Location = New System.Drawing.Point(12, 273)
         Me.dgvPrestaciones.Name = "dgvPrestaciones"
         Me.dgvPrestaciones.Size = New System.Drawing.Size(556, 164)
         Me.dgvPrestaciones.TabIndex = 1
-        '
-        'idPrestacion
-        '
-        Me.idPrestacion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
-        Me.idPrestacion.HeaderText = "id"
-        Me.idPrestacion.Name = "idPrestacion"
-        Me.idPrestacion.Visible = False
-        '
-        'nombre
-        '
-        Me.nombre.HeaderText = "Nombre"
-        Me.nombre.Name = "nombre"
-        '
-        'precio
-        '
-        Me.precio.HeaderText = "Precio"
-        Me.precio.Name = "precio"
-        '
-        'duracion
-        '
-        Me.duracion.HeaderText = "Duracion"
-        Me.duracion.Name = "duracion"
-        '
-        'descripcion
-        '
-        Me.descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
-        Me.descripcion.HeaderText = "Descripcion"
-        Me.descripcion.Name = "descripcion"
-        Me.descripcion.Width = 88
         '
         'cmdAgregar
         '
@@ -180,6 +151,36 @@ Partial Class frmAgregarPrestacionInexistente
         Me.cmdSalir.TabIndex = 3
         Me.cmdSalir.Text = "Salir"
         Me.cmdSalir.UseVisualStyleBackColor = True
+        '
+        'idPrestacion
+        '
+        Me.idPrestacion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
+        Me.idPrestacion.HeaderText = "id"
+        Me.idPrestacion.Name = "idPrestacion"
+        Me.idPrestacion.Visible = False
+        Me.idPrestacion.Width = 40
+        '
+        'nombre
+        '
+        Me.nombre.HeaderText = "Nombre"
+        Me.nombre.Name = "nombre"
+        '
+        'descripcion
+        '
+        Me.descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
+        Me.descripcion.HeaderText = "Descripcion"
+        Me.descripcion.Name = "descripcion"
+        Me.descripcion.Width = 88
+        '
+        'precio
+        '
+        Me.precio.HeaderText = "Precio"
+        Me.precio.Name = "precio"
+        '
+        'duracion
+        '
+        Me.duracion.HeaderText = "Duracion"
+        Me.duracion.Name = "duracion"
         '
         'frmAgregarPrestacionInexistente
         '
@@ -208,12 +209,12 @@ Partial Class frmAgregarPrestacionInexistente
     Friend WithEvents lblPrecio As System.Windows.Forms.Label
     Friend WithEvents lblNombre As System.Windows.Forms.Label
     Friend WithEvents dgvPrestaciones As System.Windows.Forms.DataGridView
-    Friend WithEvents idPrestacion As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents nombre As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents precio As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents duracion As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents descripcion As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents cmdAgregar As System.Windows.Forms.Button
     Friend WithEvents cmdSalir As System.Windows.Forms.Button
     Friend WithEvents txtPrecio As System.Windows.Forms.TextBox
+    Friend WithEvents idPrestacion As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents nombre As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents descripcion As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents precio As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents duracion As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

@@ -43,18 +43,18 @@ Partial Class frmAgregarPlanesEnObraSocial
         Me.lblOS.AutoSize = True
         Me.lblOS.Location = New System.Drawing.Point(24, 35)
         Me.lblOS.Name = "lblOS"
-        Me.lblOS.Size = New System.Drawing.Size(62, 13)
+        Me.lblOS.Size = New System.Drawing.Size(69, 13)
         Me.lblOS.TabIndex = 1
-        Me.lblOS.Text = "Obra Social"
+        Me.lblOS.Text = "* Obra Social"
         '
         'lblNombrePlan
         '
         Me.lblNombrePlan.AutoSize = True
         Me.lblNombrePlan.Location = New System.Drawing.Point(24, 96)
         Me.lblNombrePlan.Name = "lblNombrePlan"
-        Me.lblNombrePlan.Size = New System.Drawing.Size(85, 13)
+        Me.lblNombrePlan.Size = New System.Drawing.Size(92, 13)
         Me.lblNombrePlan.TabIndex = 2
-        Me.lblNombrePlan.Text = "Nombre del Plan"
+        Me.lblNombrePlan.Text = "* Nombre del Plan"
         '
         'cmbOS
         '

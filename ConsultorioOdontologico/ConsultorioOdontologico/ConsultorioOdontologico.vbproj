@@ -46,10 +46,13 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -71,6 +74,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\Odontologo.vb" />
+    <Compile Include="GUI\Obra Social\frmAgregarAlergiaInexistente.Designer.vb">
+      <DependentUpon>frmAgregarAlergiaInexistente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Obra Social\frmAgregarAlergiaInexistente.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GUI\Odontologos\frmAgregarEspecialidad.Designer.vb">
       <DependentUpon>frmAgregarEspecialidad.vb</DependentUpon>
     </Compile>
@@ -96,17 +105,11 @@
     <Compile Include="GUI\Obra Social\frmAgregarPrestacionInexistente.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\frmABMPacientes.vb">
+    <Compile Include="GUI\Pacientes\frmABMPacientes.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\frmABMPacientes.Designer.vb">
+    <Compile Include="GUI\Pacientes\frmABMPacientes.Designer.vb">
       <DependentUpon>frmABMPacientes.vb</DependentUpon>
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Odontologos\ABMEspecialidades.Designer.vb">
-      <DependentUpon>ABMEspecialidades.vb</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Odontologos\ABMEspecialidades.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Odontologos\frmABMOdontologos.Designer.vb">
@@ -133,6 +136,36 @@
     <Compile Include="GUI\Obra Social\frmObraSocial.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GUI\Pacientes\frmAgregarEnfermedadAPaciente.Designer.vb">
+      <DependentUpon>frmAgregarEnfermedadAPaciente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Pacientes\frmAgregarEnfermedadAPaciente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Pacientes\frmAgregarEnfermedadInexistente.Designer.vb">
+      <DependentUpon>frmAgregarEnfermedadInexistente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Pacientes\frmAgregarEnfermedadInexistente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Pacientes\frmAgregarHC.Designer.vb">
+      <DependentUpon>frmAgregarHC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Pacientes\frmAgregarHC.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Pacientes\frmAgregrAlergiaAPaciente.Designer.vb">
+      <DependentUpon>frmAgregrAlergiaAPaciente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Pacientes\frmAgregrAlergiaAPaciente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Pacientes\HistoriaClinicavb.Designer.vb">
+      <DependentUpon>HistoriaClinicavb.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Pacientes\HistoriaClinicavb.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Helper\BDHelper2.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -151,10 +184,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GUI\Obra Social\frmAgregarAlergiaInexistente.resx">
+      <DependentUpon>frmAgregarAlergiaInexistente.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Odontologos\frmAgregarEspecialidad.resx">
       <DependentUpon>frmAgregarEspecialidad.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\frmABMPacientes.resx">
+    <EmbeddedResource Include="GUI\Pacientes\frmABMPacientes.resx">
       <DependentUpon>frmABMPacientes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Obra Social\frmAgregarPlanesEnObraSocial.resx">
@@ -165,9 +201,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Obra Social\frmAgregarPrestacionInexistente.resx">
       <DependentUpon>frmAgregarPrestacionInexistente.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Odontologos\ABMEspecialidades.resx">
-      <DependentUpon>ABMEspecialidades.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Odontologos\frmABMOdontologos.resx">
       <DependentUpon>frmABMOdontologos.vb</DependentUpon>
@@ -180,6 +213,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Obra Social\frmObraSocial.resx">
       <DependentUpon>frmObraSocial.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Pacientes\frmAgregarEnfermedadAPaciente.resx">
+      <DependentUpon>frmAgregarEnfermedadAPaciente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Pacientes\frmAgregarEnfermedadInexistente.resx">
+      <DependentUpon>frmAgregarEnfermedadInexistente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Pacientes\frmAgregarHC.resx">
+      <DependentUpon>frmAgregarHC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Pacientes\frmAgregrAlergiaAPaciente.resx">
+      <DependentUpon>frmAgregrAlergiaAPaciente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Pacientes\HistoriaClinicavb.resx">
+      <DependentUpon>HistoriaClinicavb.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

@@ -39,36 +39,36 @@ Partial Class frmAgregarPrestacionPorPlan
         Me.lblOS.AutoSize = True
         Me.lblOS.Location = New System.Drawing.Point(35, 41)
         Me.lblOS.Name = "lblOS"
-        Me.lblOS.Size = New System.Drawing.Size(62, 13)
+        Me.lblOS.Size = New System.Drawing.Size(69, 13)
         Me.lblOS.TabIndex = 0
-        Me.lblOS.Text = "Obra Social"
+        Me.lblOS.Text = "* Obra Social"
         '
         'lblPlan
         '
         Me.lblPlan.AutoSize = True
         Me.lblPlan.Location = New System.Drawing.Point(35, 87)
         Me.lblPlan.Name = "lblPlan"
-        Me.lblPlan.Size = New System.Drawing.Size(28, 13)
+        Me.lblPlan.Size = New System.Drawing.Size(35, 13)
         Me.lblPlan.TabIndex = 1
-        Me.lblPlan.Text = "Plan"
+        Me.lblPlan.Text = "* Plan"
         '
         'lblPrestacion
         '
         Me.lblPrestacion.AutoSize = True
         Me.lblPrestacion.Location = New System.Drawing.Point(35, 133)
         Me.lblPrestacion.Name = "lblPrestacion"
-        Me.lblPrestacion.Size = New System.Drawing.Size(57, 13)
+        Me.lblPrestacion.Size = New System.Drawing.Size(64, 13)
         Me.lblPrestacion.TabIndex = 2
-        Me.lblPrestacion.Text = "Prestacion"
+        Me.lblPrestacion.Text = "* Prestacion"
         '
         'lblMontoCubierto
         '
         Me.lblMontoCubierto.AutoSize = True
         Me.lblMontoCubierto.Location = New System.Drawing.Point(35, 178)
         Me.lblMontoCubierto.Name = "lblMontoCubierto"
-        Me.lblMontoCubierto.Size = New System.Drawing.Size(82, 13)
+        Me.lblMontoCubierto.Size = New System.Drawing.Size(89, 13)
         Me.lblMontoCubierto.TabIndex = 3
-        Me.lblMontoCubierto.Text = "Monto Cubierto "
+        Me.lblMontoCubierto.Text = "* Monto Cubierto "
         '
         'cmbOS
         '
