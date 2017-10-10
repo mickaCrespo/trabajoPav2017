@@ -31,31 +31,45 @@ Partial Class frmAgregarHCCompleta
         Me.cmbUbicacion = New System.Windows.Forms.ComboBox()
         Me.cmbPrestaciones = New System.Windows.Forms.ComboBox()
         Me.cmdAgregarHC = New System.Windows.Forms.Button()
-        Me.dgvHC = New System.Windows.Forms.DataGridView()
-        Me.dgvDiagnosticos = New System.Windows.Forms.DataGridView()
-        Me.grdAlergias = New System.Windows.Forms.DataGridView()
         Me.grbHC = New System.Windows.Forms.GroupBox()
+        Me.dgvHC = New System.Windows.Forms.DataGridView()
+        Me.Fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idPrestacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Prestacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idUbicacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Ubicacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idTipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TipoDiente = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Observaciones = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.grbDiagnosticos = New System.Windows.Forms.GroupBox()
+        Me.dgvEnfermedades = New System.Windows.Forms.DataGridView()
+        Me.idEnfermedad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cmdAgregarDiagnosticos = New System.Windows.Forms.Button()
         Me.cmdAgregarNuevoDiagnostico = New System.Windows.Forms.Button()
         Me.rtxtDescripcion = New System.Windows.Forms.RichTextBox()
         Me.cmbEnfermedades = New System.Windows.Forms.ComboBox()
         Me.lblDescripcion = New System.Windows.Forms.Label()
         Me.lblNombre = New System.Windows.Forms.Label()
         Me.grbAlergias = New System.Windows.Forms.GroupBox()
+        Me.dgvAlergias = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cmdAgregarNuevaAlergia = New System.Windows.Forms.Button()
         Me.cmdAgregarAlergias = New System.Windows.Forms.Button()
-        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
+        Me.rtxtDescripcionAlergias = New System.Windows.Forms.RichTextBox()
         Me.cmbAlergias = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.cmdAgregarDiagnosticos = New System.Windows.Forms.Button()
         Me.cmdGuardarCambios = New System.Windows.Forms.Button()
-        CType(Me.dgvHC, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgvDiagnosticos, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.grdAlergias, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grbHC.SuspendLayout()
+        CType(Me.dgvHC, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grbDiagnosticos.SuspendLayout()
+        CType(Me.dgvEnfermedades, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grbAlergias.SuspendLayout()
+        CType(Me.dgvAlergias, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblObservaciones
@@ -138,30 +152,6 @@ Partial Class frmAgregarHCCompleta
         Me.cmdAgregarHC.Text = "Agregar"
         Me.cmdAgregarHC.UseVisualStyleBackColor = True
         '
-        'dgvHC
-        '
-        Me.dgvHC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvHC.Location = New System.Drawing.Point(20, 28)
-        Me.dgvHC.Name = "dgvHC"
-        Me.dgvHC.Size = New System.Drawing.Size(524, 235)
-        Me.dgvHC.TabIndex = 18
-        '
-        'dgvDiagnosticos
-        '
-        Me.dgvDiagnosticos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvDiagnosticos.Location = New System.Drawing.Point(20, 42)
-        Me.dgvDiagnosticos.Name = "dgvDiagnosticos"
-        Me.dgvDiagnosticos.Size = New System.Drawing.Size(524, 150)
-        Me.dgvDiagnosticos.TabIndex = 19
-        '
-        'grdAlergias
-        '
-        Me.grdAlergias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.grdAlergias.Location = New System.Drawing.Point(20, 32)
-        Me.grdAlergias.Name = "grdAlergias"
-        Me.grdAlergias.Size = New System.Drawing.Size(524, 150)
-        Me.grdAlergias.TabIndex = 20
-        '
         'grbHC
         '
         Me.grbHC.Controls.Add(Me.dgvHC)
@@ -181,13 +171,74 @@ Partial Class frmAgregarHCCompleta
         Me.grbHC.TabStop = False
         Me.grbHC.Text = "Historias Clinicas"
         '
+        'dgvHC
+        '
+        Me.dgvHC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvHC.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Fecha, Me.idPrestacion, Me.Prestacion, Me.idUbicacion, Me.Ubicacion, Me.idTipo, Me.TipoDiente, Me.Observaciones})
+        Me.dgvHC.Location = New System.Drawing.Point(22, 28)
+        Me.dgvHC.Name = "dgvHC"
+        Me.dgvHC.ReadOnly = True
+        Me.dgvHC.Size = New System.Drawing.Size(539, 246)
+        Me.dgvHC.TabIndex = 18
+        '
+        'Fecha
+        '
+        Me.Fecha.HeaderText = "Fecha"
+        Me.Fecha.Name = "Fecha"
+        Me.Fecha.ReadOnly = True
+        '
+        'idPrestacion
+        '
+        Me.idPrestacion.HeaderText = "idPrestacion"
+        Me.idPrestacion.Name = "idPrestacion"
+        Me.idPrestacion.ReadOnly = True
+        Me.idPrestacion.Visible = False
+        '
+        'Prestacion
+        '
+        Me.Prestacion.HeaderText = "Prestacion"
+        Me.Prestacion.Name = "Prestacion"
+        Me.Prestacion.ReadOnly = True
+        '
+        'idUbicacion
+        '
+        Me.idUbicacion.HeaderText = "idUbicacion"
+        Me.idUbicacion.Name = "idUbicacion"
+        Me.idUbicacion.ReadOnly = True
+        Me.idUbicacion.Visible = False
+        '
+        'Ubicacion
+        '
+        Me.Ubicacion.HeaderText = "Ubicacion"
+        Me.Ubicacion.Name = "Ubicacion"
+        Me.Ubicacion.ReadOnly = True
+        '
+        'idTipo
+        '
+        Me.idTipo.HeaderText = "idTipo"
+        Me.idTipo.Name = "idTipo"
+        Me.idTipo.ReadOnly = True
+        Me.idTipo.Visible = False
+        '
+        'TipoDiente
+        '
+        Me.TipoDiente.HeaderText = "Tipo Diente"
+        Me.TipoDiente.Name = "TipoDiente"
+        Me.TipoDiente.ReadOnly = True
+        '
+        'Observaciones
+        '
+        Me.Observaciones.HeaderText = "Observaciones"
+        Me.Observaciones.Name = "Observaciones"
+        Me.Observaciones.ReadOnly = True
+        '
         'grbDiagnosticos
         '
+        Me.grbDiagnosticos.Controls.Add(Me.dgvEnfermedades)
         Me.grbDiagnosticos.Controls.Add(Me.cmdAgregarDiagnosticos)
         Me.grbDiagnosticos.Controls.Add(Me.cmdAgregarNuevoDiagnostico)
         Me.grbDiagnosticos.Controls.Add(Me.rtxtDescripcion)
         Me.grbDiagnosticos.Controls.Add(Me.cmbEnfermedades)
-        Me.grbDiagnosticos.Controls.Add(Me.dgvDiagnosticos)
         Me.grbDiagnosticos.Controls.Add(Me.lblDescripcion)
         Me.grbDiagnosticos.Controls.Add(Me.lblNombre)
         Me.grbDiagnosticos.Location = New System.Drawing.Point(12, 322)
@@ -196,6 +247,40 @@ Partial Class frmAgregarHCCompleta
         Me.grbDiagnosticos.TabIndex = 22
         Me.grbDiagnosticos.TabStop = False
         Me.grbDiagnosticos.Text = "Diagnosticos"
+        '
+        'dgvEnfermedades
+        '
+        Me.dgvEnfermedades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvEnfermedades.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idEnfermedad, Me.Nombre, Me.Descripcion})
+        Me.dgvEnfermedades.Location = New System.Drawing.Point(22, 40)
+        Me.dgvEnfermedades.Name = "dgvEnfermedades"
+        Me.dgvEnfermedades.Size = New System.Drawing.Size(539, 154)
+        Me.dgvEnfermedades.TabIndex = 21
+        '
+        'idEnfermedad
+        '
+        Me.idEnfermedad.HeaderText = "idEnfermedad"
+        Me.idEnfermedad.Name = "idEnfermedad"
+        Me.idEnfermedad.Visible = False
+        '
+        'Nombre
+        '
+        Me.Nombre.HeaderText = "Nombre"
+        Me.Nombre.Name = "Nombre"
+        '
+        'Descripcion
+        '
+        Me.Descripcion.HeaderText = "Descripción"
+        Me.Descripcion.Name = "Descripcion"
+        '
+        'cmdAgregarDiagnosticos
+        '
+        Me.cmdAgregarDiagnosticos.Location = New System.Drawing.Point(925, 171)
+        Me.cmdAgregarDiagnosticos.Name = "cmdAgregarDiagnosticos"
+        Me.cmdAgregarDiagnosticos.Size = New System.Drawing.Size(75, 23)
+        Me.cmdAgregarDiagnosticos.TabIndex = 20
+        Me.cmdAgregarDiagnosticos.Text = "Agregar"
+        Me.cmdAgregarDiagnosticos.UseVisualStyleBackColor = True
         '
         'cmdAgregarNuevoDiagnostico
         '
@@ -244,19 +329,44 @@ Partial Class frmAgregarHCCompleta
         '
         'grbAlergias
         '
+        Me.grbAlergias.Controls.Add(Me.dgvAlergias)
         Me.grbAlergias.Controls.Add(Me.cmdAgregarNuevaAlergia)
         Me.grbAlergias.Controls.Add(Me.cmdAgregarAlergias)
-        Me.grbAlergias.Controls.Add(Me.RichTextBox1)
+        Me.grbAlergias.Controls.Add(Me.rtxtDescripcionAlergias)
         Me.grbAlergias.Controls.Add(Me.cmbAlergias)
         Me.grbAlergias.Controls.Add(Me.Label1)
         Me.grbAlergias.Controls.Add(Me.Label2)
-        Me.grbAlergias.Controls.Add(Me.grdAlergias)
         Me.grbAlergias.Location = New System.Drawing.Point(12, 539)
         Me.grbAlergias.Name = "grbAlergias"
         Me.grbAlergias.Size = New System.Drawing.Size(1015, 219)
         Me.grbAlergias.TabIndex = 23
         Me.grbAlergias.TabStop = False
         Me.grbAlergias.Text = "Alergias"
+        '
+        'dgvAlergias
+        '
+        Me.dgvAlergias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvAlergias.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3})
+        Me.dgvAlergias.Location = New System.Drawing.Point(22, 34)
+        Me.dgvAlergias.Name = "dgvAlergias"
+        Me.dgvAlergias.Size = New System.Drawing.Size(539, 154)
+        Me.dgvAlergias.TabIndex = 27
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.HeaderText = "idEnfermedad"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.Visible = False
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Nombre"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Descripción"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
         '
         'cmdAgregarNuevaAlergia
         '
@@ -277,13 +387,13 @@ Partial Class frmAgregarHCCompleta
         Me.cmdAgregarAlergias.Text = "Agregar"
         Me.cmdAgregarAlergias.UseVisualStyleBackColor = True
         '
-        'RichTextBox1
+        'rtxtDescripcionAlergias
         '
-        Me.RichTextBox1.Location = New System.Drawing.Point(683, 61)
-        Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(317, 96)
-        Me.RichTextBox1.TabIndex = 24
-        Me.RichTextBox1.Text = ""
+        Me.rtxtDescripcionAlergias.Location = New System.Drawing.Point(683, 61)
+        Me.rtxtDescripcionAlergias.Name = "rtxtDescripcionAlergias"
+        Me.rtxtDescripcionAlergias.Size = New System.Drawing.Size(317, 96)
+        Me.rtxtDescripcionAlergias.TabIndex = 24
+        Me.rtxtDescripcionAlergias.Text = ""
         '
         'cmbAlergias
         '
@@ -313,15 +423,6 @@ Partial Class frmAgregarHCCompleta
         Me.Label2.TabIndex = 21
         Me.Label2.Text = "* Nombre"
         '
-        'cmdAgregarDiagnosticos
-        '
-        Me.cmdAgregarDiagnosticos.Location = New System.Drawing.Point(925, 171)
-        Me.cmdAgregarDiagnosticos.Name = "cmdAgregarDiagnosticos"
-        Me.cmdAgregarDiagnosticos.Size = New System.Drawing.Size(75, 23)
-        Me.cmdAgregarDiagnosticos.TabIndex = 20
-        Me.cmdAgregarDiagnosticos.Text = "Agregar"
-        Me.cmdAgregarDiagnosticos.UseVisualStyleBackColor = True
-        '
         'cmdGuardarCambios
         '
         Me.cmdGuardarCambios.Location = New System.Drawing.Point(800, 781)
@@ -343,15 +444,15 @@ Partial Class frmAgregarHCCompleta
         Me.Controls.Add(Me.grbHC)
         Me.Name = "frmAgregarHCCompleta"
         Me.Text = "frmAgregarHCCompleta"
-        CType(Me.dgvHC, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgvDiagnosticos, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.grdAlergias, System.ComponentModel.ISupportInitialize).EndInit()
         Me.grbHC.ResumeLayout(False)
         Me.grbHC.PerformLayout()
+        CType(Me.dgvHC, System.ComponentModel.ISupportInitialize).EndInit()
         Me.grbDiagnosticos.ResumeLayout(False)
         Me.grbDiagnosticos.PerformLayout()
+        CType(Me.dgvEnfermedades, System.ComponentModel.ISupportInitialize).EndInit()
         Me.grbAlergias.ResumeLayout(False)
         Me.grbAlergias.PerformLayout()
+        CType(Me.dgvAlergias, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -364,9 +465,6 @@ Partial Class frmAgregarHCCompleta
     Friend WithEvents cmbUbicacion As System.Windows.Forms.ComboBox
     Friend WithEvents cmbPrestaciones As System.Windows.Forms.ComboBox
     Friend WithEvents cmdAgregarHC As System.Windows.Forms.Button
-    Friend WithEvents dgvHC As System.Windows.Forms.DataGridView
-    Friend WithEvents dgvDiagnosticos As System.Windows.Forms.DataGridView
-    Friend WithEvents grdAlergias As System.Windows.Forms.DataGridView
     Friend WithEvents grbHC As System.Windows.Forms.GroupBox
     Friend WithEvents grbDiagnosticos As System.Windows.Forms.GroupBox
     Friend WithEvents cmdAgregarNuevoDiagnostico As System.Windows.Forms.Button
@@ -378,9 +476,26 @@ Partial Class frmAgregarHCCompleta
     Friend WithEvents cmdAgregarDiagnosticos As System.Windows.Forms.Button
     Friend WithEvents cmdAgregarNuevaAlergia As System.Windows.Forms.Button
     Friend WithEvents cmdAgregarAlergias As System.Windows.Forms.Button
-    Friend WithEvents RichTextBox1 As System.Windows.Forms.RichTextBox
+    Friend WithEvents rtxtDescripcionAlergias As System.Windows.Forms.RichTextBox
     Friend WithEvents cmbAlergias As System.Windows.Forms.ComboBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents cmdGuardarCambios As System.Windows.Forms.Button
+    Friend WithEvents dgvHC As System.Windows.Forms.DataGridView
+    Friend WithEvents Fecha As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents idPrestacion As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Prestacion As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents idUbicacion As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Ubicacion As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents idTipo As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents TipoDiente As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Observaciones As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents dgvEnfermedades As System.Windows.Forms.DataGridView
+    Friend WithEvents idEnfermedad As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Nombre As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Descripcion As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents dgvAlergias As System.Windows.Forms.DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

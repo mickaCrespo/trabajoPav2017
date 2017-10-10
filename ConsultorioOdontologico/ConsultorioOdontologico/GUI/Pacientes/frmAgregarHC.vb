@@ -37,4 +37,8 @@
 
         End If
     End Sub
+
+    Private Sub cmbPrestaciones_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbPrestaciones.SelectedIndexChanged
+
+    End Sub
 End Class

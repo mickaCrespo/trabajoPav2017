@@ -48,8 +48,4 @@
         llenarGridAlergias(BDHelper2.GetAlergiasDePaciente(dni))
     End Sub
 
-    Private Sub frmHistoriaClinica_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
-        Me.Hide()
-        frmABMPacientes.Show()
-    End Sub
 End Class
