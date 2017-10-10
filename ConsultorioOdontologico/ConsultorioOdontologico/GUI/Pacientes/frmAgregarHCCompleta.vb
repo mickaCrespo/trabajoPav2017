@@ -100,7 +100,7 @@
             str += agregarDiagnostico(str)
         End If
 
-        MsgBox(str)
+        BDHelper2.transaccionHistoriaClinica(str)
     End Sub
 
 
