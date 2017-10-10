@@ -21,4 +21,8 @@
     Private Sub frmMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
+
+    Private Sub cmdInformes_Click(sender As Object, e As EventArgs) Handles cmdInformes.Click
+        MsgBox("Aca andamo loco")
+    End Sub
 End Class
