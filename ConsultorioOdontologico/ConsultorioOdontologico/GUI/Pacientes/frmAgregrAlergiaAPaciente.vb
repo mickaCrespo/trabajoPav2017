@@ -14,16 +14,17 @@
     End Sub
 
     Private Sub cmdAgregar_Click(sender As Object, e As EventArgs) Handles cmdAgregar.Click
-        Dim param As New List(Of Object)
-        param.Add(cmbAlergias.SelectedValue)
+        Dim index As New List(Of Object)
+        index.Add(cmbAlergias.SelectedIndex)
 
-        If BDHelper2.validarDatos(param.ToArray()) = True Then
+        If BDHelper2.validarCombos(index.ToArray()) = True Then
             Dim dni As Integer = frmABMPacientes.dgvPacientes.CurrentRow.Cells(0).Value
             Dim str As String = "INSERT INTO AlergiasXPaciente(dniPaciente,idAlergia,descripcion) VALUES("
             str += dni & "," & (cmbAlergias.SelectedIndex + 1) & ",'" & rtxtDescripcion.Text & "')"
 
             BDHelper2.agregarAlergiaAPaciente(str)
             MsgBox("La alergia ha sido agregada.")
+            rtxtDescripcion.Text = ""
         End If
     End Sub
 

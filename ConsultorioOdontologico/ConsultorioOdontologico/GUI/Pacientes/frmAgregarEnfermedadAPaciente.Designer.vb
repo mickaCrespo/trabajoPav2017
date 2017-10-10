@@ -59,6 +59,7 @@ Partial Class frmAgregarEnfermedadAPaciente
         '
         'cmbEnfermedades
         '
+        Me.cmbEnfermedades.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbEnfermedades.FormattingEnabled = True
         Me.cmbEnfermedades.Location = New System.Drawing.Point(106, 24)
         Me.cmbEnfermedades.Name = "cmbEnfermedades"

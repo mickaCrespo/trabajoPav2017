@@ -58,34 +58,40 @@
     Private Sub cmdAgregar_Click(sender As Object, e As EventArgs) Handles cmdAgregar.Click
 
         Dim param As New List(Of Object)
+        Dim index As New List(Of Object)
         param.Add(mtxtDNI.Text)
         param.Add(txtNombre.Text)
         param.Add(txtApellido.Text)
         param.Add(mtxtDOB.Text)
         param.Add(mtxtTelCont.Text)
-        param.Add(cmbOS.SelectedValue)
-        param.Add(cmbPlan.SelectedValue)
+        index.Add(cmbOS.SelectedValue)
+        index.Add(cmbPlan.SelectedValue)
         param.Add(txtNroAfiliado.Text)
 
+
         If BDHelper2.validarDatos(param.ToArray()) = True Then
+            If BDHelper2.validarCombos(index.ToArray()) = True Then
+                If BDHelper2.validarFechaNac(CDate(mtxtDOB.Text)) = True Then
 
-            Dim str As String = "INSERT INTO Pacientes (dniPaciente, apellido,nombre,sexo,fechaNacimiento,telcontacto, activo) VALUES("
-            str += mtxtDNI.Text & ", '" & txtApellido.Text & "','" & txtNombre.Text & "','"
-            If cmbSexo.SelectedIndex = 1 Then
-                str += "F',"
-            Else
-                str += "M',"
+                    Dim str As String = "INSERT INTO Pacientes (dniPaciente, apellido,nombre,sexo,fechaNacimiento,telcontacto, activo) VALUES("
+                    str += mtxtDNI.Text & ", '" & txtApellido.Text & "','" & txtNombre.Text & "','"
+                    If cmbSexo.SelectedIndex = 1 Then
+                        str += "F',"
+                    Else
+                        str += "M',"
+                    End If
+                    str += "CONVERT(DATE,'" & mtxtDOB.Text & "', 103 ),'" & mtxtTelCont.Text & "', 'T')"
+
+                    str += "INSERT INTO ObraSocialXPaciente (idNroAfiliado,idPlan,idObraSocial,dniPaciente) VALUES("
+                    str += txtNroAfiliado.Text & "," & cmbPlan.SelectedValue & "," & cmbOS.SelectedValue & "," & mtxtDNI.Text & ")"
+
+                    BDHelper2.agregarPaciente(str)
+                    MsgBox("El paciente se ha dado de alta")
+
+                    llenarGrid(BDHelper2.GetPacientes())
+
+                End If
             End If
-            str += "CONVERT(DATE,'" & mtxtDOB.Text & "', 103 ),'" & mtxtTelCont.Text & "', 'T')"
-
-            str += "INSERT INTO ObraSocialXPaciente (idNroAfiliado,idPlan,idObraSocial,dniPaciente) VALUES("
-            str += txtNroAfiliado.Text & "," & cmbPlan.SelectedValue & "," & cmbOS.SelectedValue & "," & mtxtDNI.Text & ")"
-
-            BDHelper2.agregarPaciente(str)
-            MsgBox("El paciente se ha dado de alta")
-
-            llenarGrid(BDHelper2.GetPacientes())
-
         End If
 
     End Sub
@@ -97,29 +103,33 @@
     Private Sub cmdModificar_Click(sender As Object, e As EventArgs) Handles cmdModificar.Click
 
         Dim param As New List(Of Object)
+        Dim index As New List(Of Object)
         param.Add(mtxtDNI.Text)
         param.Add(txtNombre.Text)
         param.Add(txtApellido.Text)
         param.Add(mtxtDOB.Text)
         param.Add(mtxtTelCont.Text)
-        param.Add(cmbOS.SelectedValue)
-        param.Add(cmbPlan.SelectedValue)
         param.Add(txtNroAfiliado.Text)
+        index.Add(cmbOS.SelectedIndex)
+        index.Add(cmbPlan.SelectedIndex)
 
-        If BDHelper2.validarDatos(param.ToArray()) = True Then
+        If BDHelper2.validarCombos(index.ToArray()) = True Then
+            If BDHelper2.validarDatos(param.ToArray()) = True Then
 
 
-            Dim str As String = "UPDATE Pacientes SET apellido = '" & txtApellido.Text & "', nombre = '" & txtNombre.Text & "', sexo ='"
-            If cmbSexo.SelectedIndex = 1 Then
-                str += "F',"
-            Else
-                str += "M',"
+                Dim str As String = "UPDATE Pacientes SET apellido = '" & txtApellido.Text & "', nombre = '" & txtNombre.Text & "', sexo ='"
+                If cmbSexo.SelectedIndex = 1 Then
+                    str += "F',"
+                Else
+                    str += "M',"
+                End If
+                str += "fechaNacimiento = CONVERT(DATE,'" & mtxtDOB.Text & "', 103 ),telcontacto = '" & mtxtTelCont.Text & "' WHERE dniPaciente =" & mtxtDNI.Text
+                BDHelper2.modificarPaciente(str)
+                MsgBox(str)
+                llenarGrid(BDHelper2.GetPacientes())
+                MsgBox("La informacion del paciente ha sido actualizada")
+
             End If
-            str += "fechaNacimiento = CONVERT(DATE,'" & mtxtDOB.Text & "', 103 ),telcontacto = '" & mtxtTelCont.Text & "' WHERE dniPaciente =" & mtxtDNI.Text
-            BDHelper2.modificarPaciente(str)
-            llenarGrid(BDHelper2.GetPacientes())
-            MsgBox("La informacion del paciente ha sido actualizada")
-
         End If
 
     End Sub
@@ -141,6 +151,10 @@
         txtNombre.Text = ""
         mtxtTelCont.Text = ""
         mtxtDOB.Text = ""
+        cmbOS.SelectedIndex = -1
+        cmbPlan.SelectedIndex = -1
+        cmbSexo.SelectedIndex = -1
+        txtNroAfiliado.Text = ""
 
     End Sub
 
@@ -159,15 +173,19 @@
         cmbOS.SelectedValue = dgvPacientes.CurrentRow.Cells(10).Value
         cmbPlan.SelectedValue = dgvPacientes.CurrentRow.Cells(9).Value
 
-
-
     End Sub
 
 
 
     Private Sub dgvPacientes_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvPacientes.CellContentDoubleClick
-
+        Me.Hide()
         frmHistoriaClinicavb.ShowDialog()
+
+    End Sub
+
+    Private Sub frmABMPacientes_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        Me.Hide()
+        frmMenu.Show()
     End Sub
 
 

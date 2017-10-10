@@ -86,7 +86,7 @@ Public Class BDHelper2
 
     Public Shared Function GetOdontologos() As Data.DataTable
         Dim tabla As Data.DataTable
-        Dim consulta As String = "SELECT O.legajo, O.apellido, O.nombre , O.sexo , O.fechaNacimiento , O.telContacto , O.eMail, O.nroMatricula, O.domicilio FROM Odontologos O WHERE O.activo = 'T' ORDER BY O.apellido"
+        Dim consulta As String = "SELECT O.legajo, O.dniOdontologo, O.apellido, O.nombre , O.sexo , O.fechaNacimiento , O.telContacto , O.eMail, O.nroMatricula, O.domicilio FROM Odontologos O WHERE O.activo = 'T' ORDER BY O.apellido"
 
         tabla = ConsultaSQL(consulta)
 
@@ -152,7 +152,13 @@ Public Class BDHelper2
         BDHelper2.EjecutarSQL(str)
     End Sub
 
-    Public Shared Sub agregarOdontologo(ByVal str As String)
+    Public Shared Function agregarOdontologo(ByVal str As String) As Integer
+        Dim tabla As Data.DataTable = BDHelper2.ConsultaSQL(str)
+        Return tabla.Rows(0).Item("ID")
+
+    End Function
+
+    Public Shared Sub agregarEspecialidadesXOdontologo(ByVal str As String)
         BDHelper2.EjecutarSQL(str)
     End Sub
 
@@ -197,10 +203,26 @@ Public Class BDHelper2
 
     Public Shared Function validarDatos(ByVal params As Object()) As Boolean
         For i = 0 To params.Length - 1
-            If (params(i.ToString)) = vbNullString Then
-                    MsgBox("Faltan completar datos.")
-                    Return False
-                End If
+
+
+            If params(i.ToString) = vbNullString Then
+                MsgBox("Faltan completar datos.")
+                Return False
+            End If
+
+        Next
+        Return True
+
+    End Function
+
+    Public Shared Function validarCombos(ByVal index As Object()) As Boolean
+
+        For i = 0 To index.Length - 1
+            If index(i) = -1 Then
+                MsgBox("Faltan completar datos.")
+                Return False
+            End If
+
         Next
         Return True
 
@@ -208,16 +230,19 @@ Public Class BDHelper2
 
     Public Shared Function GetHistoriasClinicas(ByVal dni As Integer) As DataTable
         Dim str As String = "SELECT HC.fecha, HC.idPrestacion, P.nombre AS nombrePrestacion, HC.idUbicacion, U.descripcion, HC.idTipo, TD.nombre AS nombreTipo, HC.observaciones FROM HistoriaClinica HC JOIN Prestaciones P ON (HC.idPrestacion = P.idPrestacion) JOIN Ubicacion U ON (HC.idUbicacion = U.idUbicacion)JOIN TipoDiente TD ON (HC.idTipo = TD.idTipo) WHERE HC.dniPaciente = " & dni
+
         Return BDHelper2.ConsultaSQL(str)
     End Function
 
     Public Shared Function GetEnfermedadesDePaciente(ByVal dni As Integer) As DataTable
         Dim str As String = "SELECT EPP.idEnfermedad, E.nombre, EPP.descripcion FROM EnfermedadesXPaciente EPP JOIN Enfermedades E ON EPP.idEnfermedad = E.idEnfermedades WHERE dniPaciente = " & dni
+
         Return BDHelper2.ConsultaSQL(str)
     End Function
 
     Public Shared Function GetAlergiasDePaciente(ByVal dni As Integer) As DataTable
         Dim str As String = "SELECT APP.idAlergia, A.nombre, APP.descripcion FROM AlergiasXPaciente APP JOIN Alergias A ON APP.idAlergia = A.idAlergia WHERE dniPaciente = " & dni
+
         Return BDHelper2.ConsultaSQL(str)
     End Function
 
@@ -250,5 +275,29 @@ Public Class BDHelper2
     Public Shared Sub agregarHCAPaciente(ByVal str As String)
         BDHelper2.EjecutarSQL(str)
     End Sub
+
+    Public Shared Function validarMonto(ByVal Prestacion As String, ByVal monto As Integer) As Boolean
+        Dim strSQL As String = "SELECT precio FROM Prestaciones WHERE nombre = '" & Prestacion & "'"
+        Dim tabla As Data.DataTable = BDHelper2.ConsultaSQL(strSQL)
+        Dim precio As Integer = tabla.Rows(0).Item("precio")
+        If monto > precio Then
+            MsgBox("ERROR: El monto ingresado es mayor al precio de la prestación (" & precio & ").")
+            Return False
+        End If
+        Return True
+    End Function
+
+    Public Shared Function validarFechaNac(ByVal fecha As DateTime) As Boolean
+        Dim fechaMin As New DateTime(1930, 1, 1)
+        Dim fechaMax As DateTime = DateTime.Now
+        If (fecha < fechaMin) OrElse (fecha > fechaMax) Then
+            MsgBox("Fecha de nacimiento errónea")
+            Return False
+        End If
+        Return True
+    End Function
+
+
+
 End Class
 

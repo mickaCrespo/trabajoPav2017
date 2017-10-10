@@ -2,6 +2,8 @@
 
     Private Sub frmObraSocial_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CargarCombo(cmbOS, BDHelper2.GetObraSocialSinNT(), "idOS", "nombre")
+        cmbPlan.Refresh()
+        txtMontoCubierto.Text = ""
     End Sub
 
     Private Sub CargarCombo(ByRef combo As ComboBox, ByRef datos As Data.DataTable, ByVal pk As String, ByVal descripcion As String)
@@ -26,26 +28,30 @@
         Dim OSSel = cmbOS.SelectedIndex + 1
         Dim PlanSel = cmbPlan.SelectedIndex + 1
         Dim param As New List(Of Object)
-        param.Add(cmbOS.SelectedValue)
-        param.Add(cmbPlan.SelectedValue)
-        param.Add(cmbPrestacion.SelectedValue)
+        Dim index As New List(Of Object)
+        index.Add(cmbOS.SelectedValue)
+        index.Add(cmbPlan.SelectedValue)
+        index.Add(cmbPrestacion.SelectedValue)
         param.Add(txtMontoCubierto.Text)
 
 
-        If BDHelper2.validarDatos(param.ToArray()) = True Then
+        If BDHelper2.validarCombos(index.ToArray()) = True Then
+            If BDHelper2.validarDatos(param.ToArray()) = True Then
+                If BDHelper2.validarMonto(cmbPrestacion.Text, txtMontoCubierto.Text) = True Then
 
-            Dim str As String = "INSERT INTO PrestacionesPorPlan (idPlan, idObraSocial,idPrestacion,montoCubierto) VALUES ("
-            str += cmbPlan.SelectedValue & "," & cmbOS.SelectedValue & "," & cmbPrestacion.SelectedValue & "," & txtMontoCubierto.Text & ")"
+                    Dim str As String = "INSERT INTO PrestacionesPorPlan (idPlan, idObraSocial,idPrestacion,montoCubierto) VALUES ("
+                    str += cmbPlan.SelectedValue & "," & cmbOS.SelectedValue & "," & cmbPrestacion.SelectedValue & "," & txtMontoCubierto.Text & ")"
 
 
-            BDHelper2.agregarPrestacionPorPlan(str)
+                    BDHelper2.agregarPrestacionPorPlan(str)
 
 
-            MsgBox("La prestacion se ha registrado")
-            CargarCombo(cmbPrestacion, BDHelper2.GetPrestacionesPorPlan(OSSel, PlanSel), "idPrestacion", "nombre")
+                    MsgBox("La prestacion se ha registrado")
+                    CargarCombo(cmbPrestacion, BDHelper2.GetPrestacionesPorPlan(OSSel, PlanSel), "idPrestacion", "nombre")
 
+                End If
+            End If
         End If
-
     End Sub
 
     

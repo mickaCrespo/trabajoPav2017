@@ -50,6 +50,7 @@ Partial Class frmAgregrAlergiaAPaciente
         '
         'cmbAlergias
         '
+        Me.cmbAlergias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbAlergias.FormattingEnabled = True
         Me.cmbAlergias.Location = New System.Drawing.Point(97, 29)
         Me.cmbAlergias.Name = "cmbAlergias"

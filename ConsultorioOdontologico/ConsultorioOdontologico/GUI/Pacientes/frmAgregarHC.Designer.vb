@@ -44,6 +44,7 @@ Partial Class frmAgregarHC
         '
         'cmbPrestaciones
         '
+        Me.cmbPrestaciones.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbPrestaciones.FormattingEnabled = True
         Me.cmbPrestaciones.Location = New System.Drawing.Point(136, 23)
         Me.cmbPrestaciones.Name = "cmbPrestaciones"
@@ -52,6 +53,7 @@ Partial Class frmAgregarHC
         '
         'cmbUbicacion
         '
+        Me.cmbUbicacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbUbicacion.FormattingEnabled = True
         Me.cmbUbicacion.Location = New System.Drawing.Point(136, 60)
         Me.cmbUbicacion.Name = "cmbUbicacion"
@@ -60,6 +62,7 @@ Partial Class frmAgregarHC
         '
         'cmbTipoDiente
         '
+        Me.cmbTipoDiente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbTipoDiente.FormattingEnabled = True
         Me.cmbTipoDiente.Location = New System.Drawing.Point(136, 97)
         Me.cmbTipoDiente.Name = "cmbTipoDiente"
@@ -71,27 +74,27 @@ Partial Class frmAgregarHC
         Me.lblPrestacion.AutoSize = True
         Me.lblPrestacion.Location = New System.Drawing.Point(20, 26)
         Me.lblPrestacion.Name = "lblPrestacion"
-        Me.lblPrestacion.Size = New System.Drawing.Size(57, 13)
+        Me.lblPrestacion.Size = New System.Drawing.Size(64, 13)
         Me.lblPrestacion.TabIndex = 4
-        Me.lblPrestacion.Text = "Prestacion"
+        Me.lblPrestacion.Text = "* Prestacion"
         '
         'lblUbicacion
         '
         Me.lblUbicacion.AutoSize = True
         Me.lblUbicacion.Location = New System.Drawing.Point(22, 63)
         Me.lblUbicacion.Name = "lblUbicacion"
-        Me.lblUbicacion.Size = New System.Drawing.Size(55, 13)
+        Me.lblUbicacion.Size = New System.Drawing.Size(62, 13)
         Me.lblUbicacion.TabIndex = 5
-        Me.lblUbicacion.Text = "Ubicacion"
+        Me.lblUbicacion.Text = "* Ubicacion"
         '
         'lblTipoDiente
         '
         Me.lblTipoDiente.AutoSize = True
         Me.lblTipoDiente.Location = New System.Drawing.Point(22, 100)
         Me.lblTipoDiente.Name = "lblTipoDiente"
-        Me.lblTipoDiente.Size = New System.Drawing.Size(38, 13)
+        Me.lblTipoDiente.Size = New System.Drawing.Size(45, 13)
         Me.lblTipoDiente.TabIndex = 6
-        Me.lblTipoDiente.Text = "Diente"
+        Me.lblTipoDiente.Text = "* Diente"
         '
         'rtxtObservaciones
         '

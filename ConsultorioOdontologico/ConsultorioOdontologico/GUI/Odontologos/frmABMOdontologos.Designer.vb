@@ -30,7 +30,6 @@ Partial Class frmABMOdontologos
         Me.lblNroMatricula = New System.Windows.Forms.Label()
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.txtApellido = New System.Windows.Forms.TextBox()
-        Me.txtLegajo = New System.Windows.Forms.TextBox()
         Me.mtxtDOB = New System.Windows.Forms.MaskedTextBox()
         Me.cmbSexo = New System.Windows.Forms.ComboBox()
         Me.lblDoB = New System.Windows.Forms.Label()
@@ -47,7 +46,15 @@ Partial Class frmABMOdontologos
         Me.lblTelefono = New System.Windows.Forms.Label()
         Me.cmdConsultar = New System.Windows.Forms.Button()
         Me.dgvOdontologos = New System.Windows.Forms.DataGridView()
+        Me.cmdAgregar = New System.Windows.Forms.Button()
+        Me.cmdModificar = New System.Windows.Forms.Button()
+        Me.cmdEliminar = New System.Windows.Forms.Button()
+        Me.cmdBorrarCampos = New System.Windows.Forms.Button()
+        Me.cmdSalir = New System.Windows.Forms.Button()
+        Me.lblDNI = New System.Windows.Forms.Label()
+        Me.mtxtDNI = New System.Windows.Forms.MaskedTextBox()
         Me.Legajo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DNI = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Apellido = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Sexo = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -56,11 +63,7 @@ Partial Class frmABMOdontologos
         Me.telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.mail = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.domicilio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cmdAgregar = New System.Windows.Forms.Button()
-        Me.cmdModificar = New System.Windows.Forms.Button()
-        Me.cmdEliminar = New System.Windows.Forms.Button()
-        Me.cmdBorrarCampos = New System.Windows.Forms.Button()
-        Me.cmdSalir = New System.Windows.Forms.Button()
+        Me.mtxtLegajo = New System.Windows.Forms.MaskedTextBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvOdontologos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -68,6 +71,9 @@ Partial Class frmABMOdontologos
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.mtxtLegajo)
+        Me.GroupBox1.Controls.Add(Me.mtxtDNI)
+        Me.GroupBox1.Controls.Add(Me.lblDNI)
         Me.GroupBox1.Controls.Add(Me.cmdAgregarEspecialidad)
         Me.GroupBox1.Controls.Add(Me.lblEspecialidades)
         Me.GroupBox1.Controls.Add(Me.clbEspecialidades)
@@ -75,7 +81,6 @@ Partial Class frmABMOdontologos
         Me.GroupBox1.Controls.Add(Me.lblNroMatricula)
         Me.GroupBox1.Controls.Add(Me.txtNombre)
         Me.GroupBox1.Controls.Add(Me.txtApellido)
-        Me.GroupBox1.Controls.Add(Me.txtLegajo)
         Me.GroupBox1.Controls.Add(Me.mtxtDOB)
         Me.GroupBox1.Controls.Add(Me.cmbSexo)
         Me.GroupBox1.Controls.Add(Me.lblDoB)
@@ -93,7 +98,7 @@ Partial Class frmABMOdontologos
         'cmdAgregarEspecialidad
         '
         Me.cmdAgregarEspecialidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdAgregarEspecialidad.Location = New System.Drawing.Point(593, 28)
+        Me.cmdAgregarEspecialidad.Location = New System.Drawing.Point(608, 28)
         Me.cmdAgregarEspecialidad.Name = "cmdAgregarEspecialidad"
         Me.cmdAgregarEspecialidad.Size = New System.Drawing.Size(22, 20)
         Me.cmdAgregarEspecialidad.TabIndex = 28
@@ -104,7 +109,7 @@ Partial Class frmABMOdontologos
         'lblEspecialidades
         '
         Me.lblEspecialidades.AutoSize = True
-        Me.lblEspecialidades.Location = New System.Drawing.Point(502, 31)
+        Me.lblEspecialidades.Location = New System.Drawing.Point(517, 31)
         Me.lblEspecialidades.Name = "lblEspecialidades"
         Me.lblEspecialidades.Size = New System.Drawing.Size(85, 13)
         Me.lblEspecialidades.TabIndex = 21
@@ -114,7 +119,7 @@ Partial Class frmABMOdontologos
         '
         Me.clbEspecialidades.CheckOnClick = True
         Me.clbEspecialidades.FormattingEnabled = True
-        Me.clbEspecialidades.Location = New System.Drawing.Point(505, 59)
+        Me.clbEspecialidades.Location = New System.Drawing.Point(520, 59)
         Me.clbEspecialidades.Name = "clbEspecialidades"
         Me.clbEspecialidades.Size = New System.Drawing.Size(148, 124)
         Me.clbEspecialidades.TabIndex = 20
@@ -148,13 +153,6 @@ Partial Class frmABMOdontologos
         Me.txtApellido.Name = "txtApellido"
         Me.txtApellido.Size = New System.Drawing.Size(100, 20)
         Me.txtApellido.TabIndex = 16
-        '
-        'txtLegajo
-        '
-        Me.txtLegajo.Location = New System.Drawing.Point(147, 28)
-        Me.txtLegajo.Name = "txtLegajo"
-        Me.txtLegajo.Size = New System.Drawing.Size(100, 20)
-        Me.txtLegajo.TabIndex = 15
         '
         'mtxtDOB
         '
@@ -216,9 +214,9 @@ Partial Class frmABMOdontologos
         Me.lblLegajo.AutoSize = True
         Me.lblLegajo.Location = New System.Drawing.Point(11, 35)
         Me.lblLegajo.Name = "lblLegajo"
-        Me.lblLegajo.Size = New System.Drawing.Size(46, 13)
+        Me.lblLegajo.Size = New System.Drawing.Size(39, 13)
         Me.lblLegajo.TabIndex = 0
-        Me.lblLegajo.Text = "* Legajo"
+        Me.lblLegajo.Text = "Legajo"
         '
         'GroupBox2
         '
@@ -295,56 +293,12 @@ Partial Class frmABMOdontologos
         'dgvOdontologos
         '
         Me.dgvOdontologos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvOdontologos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Legajo, Me.Apellido, Me.Nombre, Me.Sexo, Me.dob, Me.nroMatricula, Me.telefono, Me.mail, Me.domicilio})
+        Me.dgvOdontologos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Legajo, Me.DNI, Me.Apellido, Me.Nombre, Me.Sexo, Me.dob, Me.nroMatricula, Me.telefono, Me.mail, Me.domicilio})
         Me.dgvOdontologos.Location = New System.Drawing.Point(7, 345)
         Me.dgvOdontologos.Name = "dgvOdontologos"
+        Me.dgvOdontologos.ReadOnly = True
         Me.dgvOdontologos.Size = New System.Drawing.Size(694, 165)
         Me.dgvOdontologos.TabIndex = 21
-        '
-        'Legajo
-        '
-        Me.Legajo.HeaderText = "Legajo"
-        Me.Legajo.Name = "Legajo"
-        '
-        'Apellido
-        '
-        Me.Apellido.HeaderText = "Apellido"
-        Me.Apellido.Name = "Apellido"
-        '
-        'Nombre
-        '
-        Me.Nombre.HeaderText = "Nombre"
-        Me.Nombre.Name = "Nombre"
-        '
-        'Sexo
-        '
-        Me.Sexo.HeaderText = "Sexo"
-        Me.Sexo.Name = "Sexo"
-        '
-        'dob
-        '
-        Me.dob.HeaderText = "Fecha de Nacimiento"
-        Me.dob.Name = "dob"
-        '
-        'nroMatricula
-        '
-        Me.nroMatricula.HeaderText = "Nro Matricula"
-        Me.nroMatricula.Name = "nroMatricula"
-        '
-        'telefono
-        '
-        Me.telefono.HeaderText = "Telefono"
-        Me.telefono.Name = "telefono"
-        '
-        'mail
-        '
-        Me.mail.HeaderText = "E-mail"
-        Me.mail.Name = "mail"
-        '
-        'domicilio
-        '
-        Me.domicilio.HeaderText = "Domicilio"
-        Me.domicilio.Name = "domicilio"
         '
         'cmdAgregar
         '
@@ -391,6 +345,79 @@ Partial Class frmABMOdontologos
         Me.cmdSalir.Text = "Salir"
         Me.cmdSalir.UseVisualStyleBackColor = True
         '
+        'lblDNI
+        '
+        Me.lblDNI.AutoSize = True
+        Me.lblDNI.Location = New System.Drawing.Point(261, 35)
+        Me.lblDNI.Name = "lblDNI"
+        Me.lblDNI.Size = New System.Drawing.Size(33, 13)
+        Me.lblDNI.TabIndex = 30
+        Me.lblDNI.Text = "* DNI"
+        '
+        'mtxtDNI
+        '
+        Me.mtxtDNI.Location = New System.Drawing.Point(382, 28)
+        Me.mtxtDNI.Name = "mtxtDNI"
+        Me.mtxtDNI.Size = New System.Drawing.Size(100, 20)
+        Me.mtxtDNI.TabIndex = 31
+        '
+        'Legajo
+        '
+        Me.Legajo.HeaderText = "Legajo"
+        Me.Legajo.Name = "Legajo"
+        '
+        'DNI
+        '
+        Me.DNI.HeaderText = "DNI"
+        Me.DNI.Name = "DNI"
+        '
+        'Apellido
+        '
+        Me.Apellido.HeaderText = "Apellido"
+        Me.Apellido.Name = "Apellido"
+        '
+        'Nombre
+        '
+        Me.Nombre.HeaderText = "Nombre"
+        Me.Nombre.Name = "Nombre"
+        '
+        'Sexo
+        '
+        Me.Sexo.HeaderText = "Sexo"
+        Me.Sexo.Name = "Sexo"
+        '
+        'dob
+        '
+        Me.dob.HeaderText = "Fecha de Nacimiento"
+        Me.dob.Name = "dob"
+        '
+        'nroMatricula
+        '
+        Me.nroMatricula.HeaderText = "Nro Matricula"
+        Me.nroMatricula.Name = "nroMatricula"
+        '
+        'telefono
+        '
+        Me.telefono.HeaderText = "Telefono"
+        Me.telefono.Name = "telefono"
+        '
+        'mail
+        '
+        Me.mail.HeaderText = "E-mail"
+        Me.mail.Name = "mail"
+        '
+        'domicilio
+        '
+        Me.domicilio.HeaderText = "Domicilio"
+        Me.domicilio.Name = "domicilio"
+        '
+        'mtxtLegajo
+        '
+        Me.mtxtLegajo.Location = New System.Drawing.Point(147, 28)
+        Me.mtxtLegajo.Name = "mtxtLegajo"
+        Me.mtxtLegajo.Size = New System.Drawing.Size(100, 20)
+        Me.mtxtLegajo.TabIndex = 32
+        '
         'frmABMOdontologos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -426,7 +453,6 @@ Partial Class frmABMOdontologos
     Friend WithEvents cmbSexo As System.Windows.Forms.ComboBox
     Friend WithEvents txtNombre As System.Windows.Forms.TextBox
     Friend WithEvents txtApellido As System.Windows.Forms.TextBox
-    Friend WithEvents txtLegajo As System.Windows.Forms.TextBox
     Friend WithEvents mtxtDOB As System.Windows.Forms.MaskedTextBox
     Friend WithEvents cmdConsultar As System.Windows.Forms.Button
     Friend WithEvents txtNroMatricula As System.Windows.Forms.TextBox
@@ -443,7 +469,13 @@ Partial Class frmABMOdontologos
     Friend WithEvents cmdEliminar As System.Windows.Forms.Button
     Friend WithEvents cmdBorrarCampos As System.Windows.Forms.Button
     Friend WithEvents cmdSalir As System.Windows.Forms.Button
+    Friend WithEvents lblEspecialidades As System.Windows.Forms.Label
+    Friend WithEvents clbEspecialidades As System.Windows.Forms.CheckedListBox
+    Friend WithEvents cmdAgregarEspecialidad As System.Windows.Forms.Button
+    Friend WithEvents mtxtDNI As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents lblDNI As System.Windows.Forms.Label
     Friend WithEvents Legajo As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DNI As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Apellido As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Nombre As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Sexo As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -452,7 +484,5 @@ Partial Class frmABMOdontologos
     Friend WithEvents telefono As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents mail As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents domicilio As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents lblEspecialidades As System.Windows.Forms.Label
-    Friend WithEvents clbEspecialidades As System.Windows.Forms.CheckedListBox
-    Friend WithEvents cmdAgregarEspecialidad As System.Windows.Forms.Button
+    Friend WithEvents mtxtLegajo As System.Windows.Forms.MaskedTextBox
 End Class

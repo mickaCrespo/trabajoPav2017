@@ -20,16 +20,17 @@
         param.Add(txtNombre.Text)
 
         If BDHelper2.validarDatos(param.ToArray()) = True Then
-            Dim id As Integer = BDHelper2.GetEspecialidades.Rows.Count + 1
 
-            Dim str As String = "INSERT INTO Especialidad (idEspecialidad, nombre, descripcion) VALUES("
-            str += id & ", '" & txtNombre.Text & "','" & txtDescripcion.Text & "')"
+            Dim str As String = "INSERT INTO Especialidad (nombre, descripcion) VALUES("
+            str += "'" & txtNombre.Text & "','" & txtDescripcion.Text & "')"
 
 
             BDHelper2.agregarEspecialidad(str)
 
             MsgBox("La especialidad ha sido registrada.")
             llenarGrid(BDHelper2.GetEspecialidadesParaGrilla())
+            txtDescripcion.Text = ""
+            txtNombre.Text = ""
         End If
 
     End Sub
