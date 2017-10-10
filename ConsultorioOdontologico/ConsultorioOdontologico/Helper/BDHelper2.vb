@@ -197,9 +197,9 @@ Public Class BDHelper2
     Public Shared Function validarDatos(ByVal params As Object()) As Boolean
         For i = 0 To params.Length - 1
             If (params(i.ToString)) = vbNullString Then
-                    MsgBox("Faltan completar datos.")
-                    Return False
-                End If
+                MsgBox("Faltan completar datos.")
+                Return False
+            End If
         Next
         Return True
 
