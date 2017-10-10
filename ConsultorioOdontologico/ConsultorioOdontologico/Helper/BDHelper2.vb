@@ -66,7 +66,7 @@ Public Class BDHelper2
             cmd.ExecuteNonQuery()
 
             transaccion.Commit()
-            MsgBox("EJECUTANDO COMMIT")
+            MsgBox("Entradas nuevas de la historia clinica registradas")
 
         Catch ex As Exception
             transaccion.Rollback()

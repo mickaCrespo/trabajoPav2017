@@ -72,7 +72,7 @@
 
         For i = 0 To dgvEnfermedades.RowCount() - 2
             str += "INSERT INTO EnfermedadesXPaciente(dniPaciente,idEnfermedad,descripcion) VALUES("
-            str += dni & "," & dgvEnfermedades.Rows(i).Cells("idEnfermedad").Value & "," & dgvEnfermedades.Rows(i).Cells("Descripcion").Value & "')"
+            str += dni & "," & dgvEnfermedades.Rows(i).Cells("idEnfermedad").Value & ",'" & dgvEnfermedades.Rows(i).Cells("Descripcion").Value & "')"
             str += " "
         Next
         Return str
@@ -82,7 +82,7 @@
 
         For i = 0 To dgvAlergias.Rows.Count() - 2
             str += "INSERT INTO AlergiasXPaciente(dniPaciente,idAlergia,descripcion) VALUES("
-            str += dni & "," & dgvAlergias.Rows(i).Cells("idAlergia").Value & "," & dgvAlergias.Rows(i).Cells("DescripcionAlergia").Value & "')"
+            str += dni & "," & dgvAlergias.Rows(i).Cells("idAlergia").Value & ",'" & dgvAlergias.Rows(i).Cells("DescripcionAlergia").Value & "')"
             str += " "
         Next
         Return str
@@ -93,14 +93,21 @@
         If dgvHC.Rows.Count() <> 1 Then
             str += agregarHC(str)
         End If
-        If dgvAlergias.Rows.Count <> 1 Then
-            str += agregarAlergia(str)
-        End If
         If dgvEnfermedades.Rows.Count <> 1 Then
-            str += agregarDiagnostico(str)
+            str = agregarDiagnostico(str)
+        End If
+        If dgvAlergias.Rows.Count <> 1 Then
+            str = agregarAlergia(str)
         End If
 
+        MsgBox(str)
+
         BDHelper2.transaccionHistoriaClinica(str)
+
+        dgvHC.Rows.Clear()
+        dgvEnfermedades.Rows.Clear()
+        dgvAlergias.Rows.Clear()
+
     End Sub
 
 
