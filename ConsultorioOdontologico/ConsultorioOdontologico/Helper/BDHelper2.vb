@@ -205,6 +205,7 @@ Public Class BDHelper2
 
     End Function
 
+
     Public Shared Function GetHistoriasClinicas(ByVal dni As Integer) As DataTable
         Dim str As String = "SELECT HC.fecha, HC.idPrestacion, P.nombre AS nombrePrestacion, HC.idUbicacion, U.descripcion, HC.idTipo, TD.nombre AS nombreTipo, HC.observaciones FROM HistoriaClinica HC JOIN Prestaciones P ON (HC.idPrestacion = P.idPrestacion) JOIN Ubicacion U ON (HC.idUbicacion = U.idUbicacion)JOIN TipoDiente TD ON (HC.idTipo = TD.idTipo) WHERE HC.dniPaciente = " & dni
         Return BDHelper2.ConsultaSQL(str)
