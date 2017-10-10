@@ -41,7 +41,6 @@ Partial Class frmObraSocial
         Me.duracion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cmdAgregarPrestacion = New System.Windows.Forms.Button()
         Me.lblPrestacionesXPlan = New System.Windows.Forms.Label()
-        Me.cmdSalir = New System.Windows.Forms.Button()
         Me.cmdActualizar = New System.Windows.Forms.Button()
         Me.grbOS.SuspendLayout()
         Me.grbPlan.SuspendLayout()
@@ -194,7 +193,7 @@ Partial Class frmObraSocial
         '
         'cmdAgregarPrestacion
         '
-        Me.cmdAgregarPrestacion.Location = New System.Drawing.Point(250, 467)
+        Me.cmdAgregarPrestacion.Location = New System.Drawing.Point(404, 467)
         Me.cmdAgregarPrestacion.Name = "cmdAgregarPrestacion"
         Me.cmdAgregarPrestacion.Size = New System.Drawing.Size(108, 23)
         Me.cmdAgregarPrestacion.TabIndex = 6
@@ -210,18 +209,9 @@ Partial Class frmObraSocial
         Me.lblPrestacionesXPlan.TabIndex = 8
         Me.lblPrestacionesXPlan.Text = "Prestaciones por plan"
         '
-        'cmdSalir
-        '
-        Me.cmdSalir.Location = New System.Drawing.Point(491, 467)
-        Me.cmdSalir.Name = "cmdSalir"
-        Me.cmdSalir.Size = New System.Drawing.Size(75, 23)
-        Me.cmdSalir.TabIndex = 9
-        Me.cmdSalir.Text = "Salir"
-        Me.cmdSalir.UseVisualStyleBackColor = True
-        '
         'cmdActualizar
         '
-        Me.cmdActualizar.Location = New System.Drawing.Point(387, 467)
+        Me.cmdActualizar.Location = New System.Drawing.Point(542, 467)
         Me.cmdActualizar.Name = "cmdActualizar"
         Me.cmdActualizar.Size = New System.Drawing.Size(76, 23)
         Me.cmdActualizar.TabIndex = 10
@@ -235,7 +225,6 @@ Partial Class frmObraSocial
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(634, 519)
         Me.Controls.Add(Me.cmdActualizar)
-        Me.Controls.Add(Me.cmdSalir)
         Me.Controls.Add(Me.lblPrestacionesXPlan)
         Me.Controls.Add(Me.cmdAgregarPrestacion)
         Me.Controls.Add(Me.dgvPrestaciones)
@@ -260,7 +249,6 @@ Partial Class frmObraSocial
     Friend WithEvents cmdAgregarPlan As System.Windows.Forms.Button
     Friend WithEvents cmdAgregarPrestacion As System.Windows.Forms.Button
     Friend WithEvents lblPrestacionesXPlan As System.Windows.Forms.Label
-    Friend WithEvents cmdSalir As System.Windows.Forms.Button
     Friend WithEvents cmbNombreOS As System.Windows.Forms.ComboBox
     Friend WithEvents cmbNombrePlan As System.Windows.Forms.ComboBox
     Friend WithEvents cmdActualizar As System.Windows.Forms.Button

@@ -32,13 +32,12 @@ Partial Class frmAgregarPrestacionInexistente
         Me.lblPrecio = New System.Windows.Forms.Label()
         Me.lblNombre = New System.Windows.Forms.Label()
         Me.dgvPrestaciones = New System.Windows.Forms.DataGridView()
-        Me.cmdAgregar = New System.Windows.Forms.Button()
-        Me.cmdSalir = New System.Windows.Forms.Button()
         Me.idPrestacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.duracion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cmdAgregar = New System.Windows.Forms.Button()
         Me.grbPrestaciones.SuspendLayout()
         CType(Me.dgvPrestaciones, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -134,31 +133,12 @@ Partial Class frmAgregarPrestacionInexistente
         Me.dgvPrestaciones.Size = New System.Drawing.Size(556, 164)
         Me.dgvPrestaciones.TabIndex = 1
         '
-        'cmdAgregar
-        '
-        Me.cmdAgregar.Location = New System.Drawing.Point(12, 473)
-        Me.cmdAgregar.Name = "cmdAgregar"
-        Me.cmdAgregar.Size = New System.Drawing.Size(75, 23)
-        Me.cmdAgregar.TabIndex = 2
-        Me.cmdAgregar.Text = "Agregar"
-        Me.cmdAgregar.UseVisualStyleBackColor = True
-        '
-        'cmdSalir
-        '
-        Me.cmdSalir.Location = New System.Drawing.Point(493, 473)
-        Me.cmdSalir.Name = "cmdSalir"
-        Me.cmdSalir.Size = New System.Drawing.Size(75, 23)
-        Me.cmdSalir.TabIndex = 3
-        Me.cmdSalir.Text = "Salir"
-        Me.cmdSalir.UseVisualStyleBackColor = True
-        '
         'idPrestacion
         '
         Me.idPrestacion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
         Me.idPrestacion.HeaderText = "id"
         Me.idPrestacion.Name = "idPrestacion"
         Me.idPrestacion.Visible = False
-        Me.idPrestacion.Width = 40
         '
         'nombre
         '
@@ -182,13 +162,21 @@ Partial Class frmAgregarPrestacionInexistente
         Me.duracion.HeaderText = "Duracion"
         Me.duracion.Name = "duracion"
         '
+        'cmdAgregar
+        '
+        Me.cmdAgregar.Location = New System.Drawing.Point(493, 466)
+        Me.cmdAgregar.Name = "cmdAgregar"
+        Me.cmdAgregar.Size = New System.Drawing.Size(75, 23)
+        Me.cmdAgregar.TabIndex = 2
+        Me.cmdAgregar.Text = "Agregar"
+        Me.cmdAgregar.UseVisualStyleBackColor = True
+        '
         'frmAgregarPrestacionInexistente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(594, 519)
-        Me.Controls.Add(Me.cmdSalir)
         Me.Controls.Add(Me.cmdAgregar)
         Me.Controls.Add(Me.dgvPrestaciones)
         Me.Controls.Add(Me.grbPrestaciones)
@@ -210,7 +198,6 @@ Partial Class frmAgregarPrestacionInexistente
     Friend WithEvents lblNombre As System.Windows.Forms.Label
     Friend WithEvents dgvPrestaciones As System.Windows.Forms.DataGridView
     Friend WithEvents cmdAgregar As System.Windows.Forms.Button
-    Friend WithEvents cmdSalir As System.Windows.Forms.Button
     Friend WithEvents txtPrecio As System.Windows.Forms.TextBox
     Friend WithEvents idPrestacion As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents nombre As System.Windows.Forms.DataGridViewTextBoxColumn

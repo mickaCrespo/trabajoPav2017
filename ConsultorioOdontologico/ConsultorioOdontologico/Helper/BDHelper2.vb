@@ -76,7 +76,7 @@ Public Class BDHelper2
 
         Dim tabla As Data.DataTable
 
-        Dim consulta As String = "SELECT O.legajo , O.apellido, O.nombre , O.sexo , O.fechaNacimiento , O.telContacto , O.eMail, O.nroMatricula, E.nombre AS 'NombreEspecialidad' FROM Odontologos O JOIN MedicosXEspecialidad ME ON O.legajo = ME.idMedico JOIN Especialidad E ON E.idEspecialidad = ME.idEspecialidad WHERE O.legajo = " & legajo & " AND O.activo = 'T'"
+        Dim consulta As String = "SELECT O.legajo, O.dniOdontologo AS DNI, O.apellido, O.nombre , O.sexo , O.fechaNacimiento , O.telContacto , O.eMail, O.nroMatricula, O.domicilio FROM Odontologos O WHERE O.activo = 'T' AND O.legajo = " & legajo
 
         tabla = ConsultaSQL(consulta)
 
@@ -86,7 +86,7 @@ Public Class BDHelper2
 
     Public Shared Function GetOdontologos() As Data.DataTable
         Dim tabla As Data.DataTable
-        Dim consulta As String = "SELECT O.legajo, O.dniOdontologo, O.apellido, O.nombre , O.sexo , O.fechaNacimiento , O.telContacto , O.eMail, O.nroMatricula, O.domicilio FROM Odontologos O WHERE O.activo = 'T' ORDER BY O.apellido"
+        Dim consulta As String = "SELECT O.legajo, O.dniOdontologo AS DNI, O.apellido, O.nombre , O.sexo , O.fechaNacimiento , O.telContacto , O.eMail, O.nroMatricula, O.domicilio FROM Odontologos O WHERE O.activo = 'T' ORDER BY O.apellido"
 
         tabla = ConsultaSQL(consulta)
 

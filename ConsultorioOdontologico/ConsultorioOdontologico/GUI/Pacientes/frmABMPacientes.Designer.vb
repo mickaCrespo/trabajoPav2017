@@ -60,7 +60,6 @@ Partial Class frmABMPacientes
         Me.cmdAgregar = New System.Windows.Forms.Button()
         Me.cmdModificar = New System.Windows.Forms.Button()
         Me.cmdEliminar = New System.Windows.Forms.Button()
-        Me.cmdSalir = New System.Windows.Forms.Button()
         Me.cmdBorrarCampos = New System.Windows.Forms.Button()
         Me.grbPacientes.SuspendLayout()
         Me.grbOS.SuspendLayout()
@@ -402,15 +401,6 @@ Partial Class frmABMPacientes
         Me.cmdEliminar.Text = "Eliminar"
         Me.cmdEliminar.UseVisualStyleBackColor = True
         '
-        'cmdSalir
-        '
-        Me.cmdSalir.Location = New System.Drawing.Point(547, 470)
-        Me.cmdSalir.Name = "cmdSalir"
-        Me.cmdSalir.Size = New System.Drawing.Size(75, 23)
-        Me.cmdSalir.TabIndex = 25
-        Me.cmdSalir.Text = "Salir"
-        Me.cmdSalir.UseVisualStyleBackColor = True
-        '
         'cmdBorrarCampos
         '
         Me.cmdBorrarCampos.Location = New System.Drawing.Point(319, 470)
@@ -427,7 +417,6 @@ Partial Class frmABMPacientes
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(634, 519)
         Me.Controls.Add(Me.cmdBorrarCampos)
-        Me.Controls.Add(Me.cmdSalir)
         Me.Controls.Add(Me.cmdEliminar)
         Me.Controls.Add(Me.cmdModificar)
         Me.Controls.Add(Me.cmdAgregar)
@@ -469,7 +458,6 @@ Partial Class frmABMPacientes
     Friend WithEvents cmdAgregar As System.Windows.Forms.Button
     Friend WithEvents cmdModificar As System.Windows.Forms.Button
     Friend WithEvents cmdEliminar As System.Windows.Forms.Button
-    Friend WithEvents cmdSalir As System.Windows.Forms.Button
     Friend WithEvents lblMensaje As System.Windows.Forms.Label
     Friend WithEvents mtxtDNI As System.Windows.Forms.MaskedTextBox
     Friend WithEvents cmdBorrarCampos As System.Windows.Forms.Button

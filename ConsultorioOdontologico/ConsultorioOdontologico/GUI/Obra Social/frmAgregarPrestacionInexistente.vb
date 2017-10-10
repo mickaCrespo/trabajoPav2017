@@ -41,7 +41,7 @@
     End Sub
 
 
-    Private Sub cmdSalir_Click(sender As Object, e As EventArgs) Handles cmdSalir.Click
+    Private Sub cmdSalir_Click(sender As Object, e As EventArgs)
         Me.Close()
     End Sub
 End Class

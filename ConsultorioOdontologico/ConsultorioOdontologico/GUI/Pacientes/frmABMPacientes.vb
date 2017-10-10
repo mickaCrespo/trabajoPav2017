@@ -44,7 +44,7 @@
 
     End Sub
 
-    Private Sub cmdSalir_Click(sender As Object, e As EventArgs) Handles cmdSalir.Click
+    Private Sub cmdSalir_Click(sender As Object, e As EventArgs)
         'Confirmación de salida.
         If MessageBox.Show("Seguro que desea salir?", _
                 "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question _

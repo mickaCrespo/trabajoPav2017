@@ -16,7 +16,8 @@
         dgvOdontologos.Rows.Clear()
 
         For Each fila As DataRow In source.Rows
-            dgvOdontologos.Rows.Add(New String() {fila.Item("legajo"), fila.Item("dniOdontologo"), fila.Item("apellido"), fila.Item("nombre"), fila.Item("sexo"), fila.Item("fechaNacimiento"), fila.Item("nroMatricula"), fila.Item("telContacto"), fila.Item("eMail"), fila.Item("domicilio")})
+
+            dgvOdontologos.Rows.Add(New String() {fila.Item("legajo"), fila.Item("DNI"), fila.Item("apellido"), fila.Item("nombre"), fila.Item("sexo"), fila.Item("fechaNacimiento"), fila.Item("telContacto"), fila.Item("eMail"), fila.Item("nroMatricula"), fila.Item("domicilio")})
         Next
 
     End Sub
@@ -38,7 +39,7 @@
 
     End Sub
 
-    Private Sub cmdSalir_Click(sender As Object, e As EventArgs) Handles cmdSalir.Click
+    Private Sub cmdSalir_Click(sender As Object, e As EventArgs)
         'Confirmación de salida.
         If MessageBox.Show("Seguro que desea salir?", _
                 "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question _
@@ -218,6 +219,7 @@
         Me.Hide()
         frmMenu.Show()
     End Sub
+
 
 
 End Class
