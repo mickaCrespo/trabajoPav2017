@@ -13,16 +13,21 @@
 
 
         If BDHelper2.validarDatos(param.ToArray()) = True Then
-            Dim id As Integer = BDHelper2.GetPrestaciones().Rows.Count + 1
 
-            Dim str As String = "INSERT INTO Prestaciones (idPrestacion, nombre, descripcion, precio, duracion) VALUES ("
-            str += id & ",'" & txtNombre.Text & "','" & rtbDescripcion.Text & "'," & txtPrecio.Text & "," & txtDuracion.Text & ")"
+            Dim str As String = "INSERT INTO Prestaciones (nombre, descripcion, precio, duracion) VALUES ("
+            str += "'" & txtNombre.Text & "','" & rtbDescripcion.Text & "'," & txtPrecio.Text & "," & txtDuracion.Text & ")"
 
             BDHelper2.agregarPrestacionPorPlan(str)
             MsgBox("La prestacion se ha registrado")
             llenarGrid(BDHelper2.GetPrestaciones())
 
+            txtDuracion.Text = ""
+            txtNombre.Text = ""
+            txtPrecio.Text = ""
+
         End If
+
+        
 
     End Sub
 

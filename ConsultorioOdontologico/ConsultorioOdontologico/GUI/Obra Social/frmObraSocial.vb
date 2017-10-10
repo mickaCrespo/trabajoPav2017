@@ -67,9 +67,11 @@
 
     Private Sub cmbNombreOS_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbNombreOS.SelectedIndexChanged
         CargarCombo(cmbNombrePlan, BDHelper2.GetPlan(cmbNombreOS.SelectedIndex + 1), "idPlan", "nombre")
-
-
     End Sub
 
+    Private Sub frmObraSocial_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        Me.Hide()
+        frmMenu.Show()
+    End Sub
 
 End Class

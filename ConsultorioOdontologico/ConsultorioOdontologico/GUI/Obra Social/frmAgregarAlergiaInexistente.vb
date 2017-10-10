@@ -6,12 +6,16 @@
         param.Add(txtNombre.Text)
 
         If BDHelper2.validarDatos(param.ToArray()) = True Then
-            Dim id As Integer = BDHelper2.GetAlergias.Rows.Count + 1
-            Dim str As String = "INSERT INTO Alergias(idAlergia,nombre,descripcion) VALUES("
-            str += id & ",'" & txtNombre.Text & "','" & txtDescripcion.Text & "')"
+            Dim str As String = "INSERT INTO Alergias(nombre,descripcion) VALUES("
+            str += "'" & txtNombre.Text & "','" & txtDescripcion.Text & "')"
 
             BDHelper2.agregarAlergiaAPaciente(str)
             MsgBox("Alergia agregada.")
         End If
+    End Sub
+
+    Private Sub frmAgregarAlergiaInexistente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        txtNombre.Text = ""
+        txtDescripcion.Text = ""
     End Sub
 End Class

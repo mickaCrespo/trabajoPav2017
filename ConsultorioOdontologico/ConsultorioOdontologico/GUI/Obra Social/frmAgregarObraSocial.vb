@@ -7,10 +7,9 @@
 
         If BDHelper2.validarDatos(param.ToArray()) = True Then
 
-            Dim id As Integer = BDHelper2.GetObraSocial.Rows.Count
 
-            Dim str As String = "INSERT INTO ObraSocial (idOS, nombre) VALUES ("
-            str += id & ",'" & txtNombre.Text & "')"
+            Dim str As String = "INSERT INTO ObraSocial (nombre) VALUES ("
+            str += "'" & txtNombre.Text & "')"
 
             BDHelper2.agregarPrestacionPorPlan(str)
             MsgBox("La Obra Social se ha registrado")
@@ -22,4 +21,7 @@
  
 
 
+    Private Sub frmAgregarObraSocial_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        txtNombre.Text = ""
+    End Sub
 End Class
