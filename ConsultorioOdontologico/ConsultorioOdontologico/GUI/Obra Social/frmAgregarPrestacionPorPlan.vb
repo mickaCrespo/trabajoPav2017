@@ -27,27 +27,26 @@
 
         Dim OSSel = cmbOS.SelectedIndex + 1
         Dim PlanSel = cmbPlan.SelectedIndex + 1
-        Dim param As New List(Of Object)
         Dim index As New List(Of Object)
+        Dim param As New List(Of Object)
         index.Add(cmbOS.SelectedValue)
         index.Add(cmbPlan.SelectedValue)
         index.Add(cmbPrestacion.SelectedValue)
         param.Add(txtMontoCubierto.Text)
 
-
-        If BDHelper2.validarCombos(index.ToArray()) = True Then
-            If BDHelper2.validarDatos(param.ToArray()) = True Then
+        If BDHelper2.validarDatos(param.ToArray) = True Then
+            If BDHelper2.validarCombos(index.ToArray()) = True Then
                 If BDHelper2.validarMonto(cmbPrestacion.Text, txtMontoCubierto.Text) = True Then
 
-                    Dim str As String = "INSERT INTO PrestacionesPorPlan (idPlan, idObraSocial,idPrestacion,montoCubierto) VALUES ("
-                    str += cmbPlan.SelectedValue & "," & cmbOS.SelectedValue & "," & cmbPrestacion.SelectedValue & "," & txtMontoCubierto.Text & ")"
+                    Dim str As String = "INSERT INTO PrestacionesPorPlan (idPlan, idObraSocial,idPrestacion,montoCubierto, activo) VALUES ("
+                    str += cmbPlan.SelectedValue & "," & cmbOS.SelectedValue & "," & cmbPrestacion.SelectedValue & "," & txtMontoCubierto.Text & ",'T')"
 
 
                     BDHelper2.agregarPrestacionPorPlan(str)
 
 
                     MsgBox("La prestacion se ha registrado")
-                    CargarCombo(cmbPrestacion, BDHelper2.GetPrestacionesPorPlan(OSSel, PlanSel), "idPrestacion", "nombre")
+                    CargarCombo(cmbPrestacion, BDHelper2.GetPrestacionesNotInPlan(OSSel, PlanSel), "idPrestacion", "nombre")
 
                 End If
             End If
@@ -66,7 +65,7 @@
         Dim PlanSel = cmbPlan.SelectedIndex + 1
 
 
-        CargarCombo(cmbPrestacion, BDHelper2.GetPrestacionesPorPlan(OSSel, PlanSel), "idPrestacion", "nombre")
+        CargarCombo(cmbPrestacion, BDHelper2.GetPrestacionesNotInPlan(OSSel, PlanSel), "idPrestacion", "nombre")
 
     End Sub
 End Class

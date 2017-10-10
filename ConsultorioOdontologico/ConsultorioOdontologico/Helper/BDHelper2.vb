@@ -123,13 +123,14 @@ Public Class BDHelper2
 
     End Function
 
-    Public Shared Function GetPrestacionesPorPlan(OSSeleccionada As Integer, PlanSeleccionado As Integer) As DataTable
+    Public Shared Function GetPrestacionesNotInPlan(OSSeleccionada As Integer, PlanSeleccionado As Integer) As DataTable
 
         Dim strSQL As String = "SELECT P.idPrestacion, P.nombre FROM Prestaciones P WHERE P.idPrestacion NOT IN ("
         strSQL += "SELECT P.idPrestacion FROM Prestaciones P LEFT JOIN PrestacionesPorPlan PPP ON (P.idPrestacion = PPP.idPrestacion)"
-        strSQL += "WHERE (PPP.idObraSocial  = " & OSSeleccionada & ") AND (PPP.idPlan = " & PlanSeleccionado & "))"
+        strSQL += "WHERE (PPP.idObraSocial  = " & OSSeleccionada & ") AND (PPP.idPlan = " & PlanSeleccionado & ") AND PPP.activo)"
         Return BDHelper2.ConsultaSQL(strSQL)
     End Function
+
 
     Public Shared Function GetPrestaciones() As DataTable
         Dim strSQL As String = "SELECT * FROM Prestaciones"
@@ -288,7 +289,7 @@ Public Class BDHelper2
     End Function
 
     Public Shared Function validarFechaNac(ByVal fecha As DateTime) As Boolean
-        Dim fechaMin As New DateTime(1930, 1, 1)
+        Dim fechaMin As New DateTime(1867, 1, 1)
         Dim fechaMax As DateTime = DateTime.Now
         If (fecha < fechaMin) OrElse (fecha > fechaMax) Then
             MsgBox("Fecha de nacimiento errónea")

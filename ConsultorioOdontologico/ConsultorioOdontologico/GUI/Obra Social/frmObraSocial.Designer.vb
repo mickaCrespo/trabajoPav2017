@@ -39,9 +39,9 @@ Partial Class frmObraSocial
         Me.precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.montoCubierto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.duracion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cmdAgregarPrestacion = New System.Windows.Forms.Button()
         Me.lblPrestacionesXPlan = New System.Windows.Forms.Label()
         Me.cmdActualizar = New System.Windows.Forms.Button()
+        Me.cmdAgregarPrestacion = New System.Windows.Forms.Button()
         Me.grbOS.SuspendLayout()
         Me.grbPlan.SuspendLayout()
         CType(Me.dgvPrestaciones, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -191,15 +191,6 @@ Partial Class frmObraSocial
         Me.duracion.ReadOnly = True
         Me.duracion.Width = 104
         '
-        'cmdAgregarPrestacion
-        '
-        Me.cmdAgregarPrestacion.Location = New System.Drawing.Point(404, 467)
-        Me.cmdAgregarPrestacion.Name = "cmdAgregarPrestacion"
-        Me.cmdAgregarPrestacion.Size = New System.Drawing.Size(108, 23)
-        Me.cmdAgregarPrestacion.TabIndex = 6
-        Me.cmdAgregarPrestacion.Text = "Agregar Prestacion"
-        Me.cmdAgregarPrestacion.UseVisualStyleBackColor = True
-        '
         'lblPrestacionesXPlan
         '
         Me.lblPrestacionesXPlan.AutoSize = True
@@ -218,15 +209,24 @@ Partial Class frmObraSocial
         Me.cmdActualizar.Text = "Actualizar"
         Me.cmdActualizar.UseVisualStyleBackColor = True
         '
+        'cmdAgregarPrestacion
+        '
+        Me.cmdAgregarPrestacion.Location = New System.Drawing.Point(403, 467)
+        Me.cmdAgregarPrestacion.Name = "cmdAgregarPrestacion"
+        Me.cmdAgregarPrestacion.Size = New System.Drawing.Size(108, 23)
+        Me.cmdAgregarPrestacion.TabIndex = 11
+        Me.cmdAgregarPrestacion.Text = "Agregar Prestacion"
+        Me.cmdAgregarPrestacion.UseVisualStyleBackColor = True
+        '
         'frmObraSocial
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(634, 519)
+        Me.Controls.Add(Me.cmdAgregarPrestacion)
         Me.Controls.Add(Me.cmdActualizar)
         Me.Controls.Add(Me.lblPrestacionesXPlan)
-        Me.Controls.Add(Me.cmdAgregarPrestacion)
         Me.Controls.Add(Me.dgvPrestaciones)
         Me.Controls.Add(Me.grbPlan)
         Me.Controls.Add(Me.grbOS)
@@ -247,7 +247,6 @@ Partial Class frmObraSocial
     Friend WithEvents lblNombreOS As System.Windows.Forms.Label
     Friend WithEvents lblNombrePlan As System.Windows.Forms.Label
     Friend WithEvents cmdAgregarPlan As System.Windows.Forms.Button
-    Friend WithEvents cmdAgregarPrestacion As System.Windows.Forms.Button
     Friend WithEvents lblPrestacionesXPlan As System.Windows.Forms.Label
     Friend WithEvents cmbNombreOS As System.Windows.Forms.ComboBox
     Friend WithEvents cmbNombrePlan As System.Windows.Forms.ComboBox
@@ -261,4 +260,5 @@ Partial Class frmObraSocial
     Friend WithEvents montoCubierto As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents duracion As System.Windows.Forms.DataGridViewTextBoxColumn
     Public WithEvents cmdAgregarOS As System.Windows.Forms.Button
+    Friend WithEvents cmdAgregarPrestacion As System.Windows.Forms.Button
 End Class

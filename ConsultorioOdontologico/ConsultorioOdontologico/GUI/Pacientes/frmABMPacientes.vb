@@ -196,4 +196,6 @@
             txtNroAfiliado.Enabled = False
         End If
     End Sub
+
+
 End Class

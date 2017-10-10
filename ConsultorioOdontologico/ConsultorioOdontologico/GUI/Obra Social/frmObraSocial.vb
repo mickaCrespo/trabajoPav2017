@@ -42,10 +42,11 @@
 
 
 
-    Private Sub cmdAgregarPrestaciones_Click(sender As Object, e As EventArgs) Handles cmdAgregarPrestacion.Click
+    Private Sub cmdAgregarPrestacion_Click(sender As Object, e As EventArgs) Handles cmdAgregarPrestacion.Click
         frmAgregarPrestacionPorPlan.ShowDialog()
-
     End Sub
+
+
 
     Private Sub cmdActualizar_Click(sender As Object, e As EventArgs) Handles cmdActualizar.Click
         Dim idPlan As Integer = cmbNombrePlan.SelectedValue

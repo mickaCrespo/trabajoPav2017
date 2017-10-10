@@ -98,3 +98,4 @@ D:\Ailin\ConsultorioOdontologico\ConsultorioOdontologico\obj\Debug\ConsultorioOd
 D:\Ailin\ConsultorioOdontologico\ConsultorioOdontologico\obj\Debug\ConsultorioOdontologico.Resources.resources
 D:\Ailin\ConsultorioOdontologico\ConsultorioOdontologico\obj\Debug\ConsultorioOdontologico.vbproj.GenerateResource.Cache
 D:\Ailin\ConsultorioOdontologico\ConsultorioOdontologico\obj\Debug\ConsultorioOdontologico.frmAgregarHCCompleta.resources
+D:\Ailin\ConsultorioOdontologico\ConsultorioOdontologico\obj\Debug\ConsultorioOdontologico.frmEliminarPrestacionPorPlan.resources
