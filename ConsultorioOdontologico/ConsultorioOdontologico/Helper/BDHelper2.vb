@@ -48,6 +48,42 @@ Public Class BDHelper2
         End Try
     End Function
 
+
+    Public Shared Sub transaccionHistoriaClinica(ByVal strSql As String)
+        Dim conexion As New SqlConnection
+        Dim cmd As New SqlCommand
+        Dim transaccion As SqlTransaction
+
+        conexion.ConnectionString = string_conexion
+        conexion.Open()
+        transaccion = conexion.BeginTransaction
+
+        Try
+
+            cmd = New SqlCommand(strSql, conexion, transaccion)
+            cmd.Connection = conexion
+
+            cmd.ExecuteNonQuery()
+
+            transaccion.Commit()
+            MsgBox("EJECUTANDO COMMIT")
+
+        Catch ex As Exception
+            transaccion.Rollback()
+            MsgBox("No se pudieron registrar los datos de la Historia Clinica")
+
+        Finally
+            conexion.Close()
+            conexion.Dispose()
+
+        End Try
+
+    End Sub
+
+
+
+
+
     Public Shared Function GetPacientes() As Data.DataTable
         Dim tabla As Data.DataTable
         Dim consulta As String = "SELECT Pacientes.dniPaciente ,Pacientes.nombre , Pacientes.apellido, Pacientes.sexo , Pacientes.fechaNacimiento , Pacientes.telContacto , ObraSocial.nombre AS 'NombreOS', Planes.nombre AS 'NombrePlan', ObraSocialXPaciente.idNroAfiliado, ObraSocialXPaciente.idPlan, ObraSocialXPaciente.idObraSocial  FROM (Pacientes JOIN ObraSocialXPaciente ON (Pacientes.dniPaciente = ObraSocialXPaciente.dniPaciente)) JOIN ObraSocial ON (ObraSocial.idOS = ObraSocialXPaciente.idObraSocial) JOIN Planes ON (Planes.idObraSocial = ObraSocialXPaciente.idObraSocial AND Planes.idPlan = ObraSocialXPaciente.idPlan ) WHERE Pacientes.activo = 'T' ORDER BY Pacientes.apellido"
@@ -230,7 +266,7 @@ Public Class BDHelper2
     End Function
 
     Public Shared Function GetHistoriasClinicas(ByVal dni As Integer) As DataTable
-        Dim str As String = "SELECT HC.fecha, HC.idPrestacion, P.nombre AS nombrePrestacion, HC.idUbicacion, U.descripcion, HC.idTipo, TD.nombre AS nombreTipo, HC.observaciones FROM HistoriaClinica HC JOIN Prestaciones P ON (HC.idPrestacion = P.idPrestacion) JOIN Ubicacion U ON (HC.idUbicacion = U.idUbicacion)JOIN TipoDiente TD ON (HC.idTipo = TD.idTipo) WHERE HC.dniPaciente = " & dni
+        Dim str As String = "SELECT HC.fecha, HC.idPrestacion, P.nombre AS nombrePrestacion, HC.idUbicacion, U.descripcion, HC.idTipo, TD.nombre AS nombreTipo, HC.observaciones FROM HistoriaClinica HC JOIN Prestaciones P ON (HC.idPrestacion = P.idPrestacion) JOIN Ubicacion U ON (HC.idUbicacion = U.idUbicacion)JOIN TipoDiente TD ON (HC.idTipo = TD.idTipo) WHERE HC.dniPaciente = " & dni & "ORDER BY HC.fecha DESC"
 
         Return BDHelper2.ConsultaSQL(str)
     End Function
