@@ -54,9 +54,6 @@ Partial Class frmAgregarHCCompleta
         Me.lblNombre = New System.Windows.Forms.Label()
         Me.grbAlergias = New System.Windows.Forms.GroupBox()
         Me.dgvAlergias = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cmdAgregarNuevaAlergia = New System.Windows.Forms.Button()
         Me.cmdAgregarAlergias = New System.Windows.Forms.Button()
         Me.rtxtDescripcionAlergias = New System.Windows.Forms.RichTextBox()
@@ -64,6 +61,9 @@ Partial Class frmAgregarHCCompleta
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.cmdGuardarCambios = New System.Windows.Forms.Button()
+        Me.idAlergia = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DescripcionAlergia = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.grbHC.SuspendLayout()
         CType(Me.dgvHC, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grbDiagnosticos.SuspendLayout()
@@ -346,27 +346,11 @@ Partial Class frmAgregarHCCompleta
         'dgvAlergias
         '
         Me.dgvAlergias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvAlergias.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3})
+        Me.dgvAlergias.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idAlergia, Me.DataGridViewTextBoxColumn2, Me.DescripcionAlergia})
         Me.dgvAlergias.Location = New System.Drawing.Point(22, 34)
         Me.dgvAlergias.Name = "dgvAlergias"
         Me.dgvAlergias.Size = New System.Drawing.Size(539, 154)
         Me.dgvAlergias.TabIndex = 27
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.HeaderText = "idEnfermedad"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.Visible = False
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Nombre"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Descripción"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
         '
         'cmdAgregarNuevaAlergia
         '
@@ -432,6 +416,22 @@ Partial Class frmAgregarHCCompleta
         Me.cmdGuardarCambios.Text = "Guardar Cambios"
         Me.cmdGuardarCambios.UseVisualStyleBackColor = True
         '
+        'idAlergia
+        '
+        Me.idAlergia.HeaderText = "idAlergia"
+        Me.idAlergia.Name = "idAlergia"
+        Me.idAlergia.Visible = False
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Nombre"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        '
+        'DescripcionAlergia
+        '
+        Me.DescripcionAlergia.HeaderText = "Descripción"
+        Me.DescripcionAlergia.Name = "DescripcionAlergia"
+        '
         'frmAgregarHCCompleta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -495,7 +495,7 @@ Partial Class frmAgregarHCCompleta
     Friend WithEvents Nombre As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Descripcion As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents dgvAlergias As System.Windows.Forms.DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents idAlergia As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DescripcionAlergia As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class
