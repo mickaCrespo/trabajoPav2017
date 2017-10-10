@@ -97,3 +97,4 @@ D:\Micka\ConsultorioOdontologico\ConsultorioOdontologico\obj\Debug\ConsultorioOd
 D:\Micka\ConsultorioOdontologico\ConsultorioOdontologico\obj\Debug\ConsultorioOdontologico.frmHistoriaClinicavb.resources
 D:\Micka\ConsultorioOdontologico\ConsultorioOdontologico\obj\Debug\ConsultorioOdontologico.Resources.resources
 D:\Micka\ConsultorioOdontologico\ConsultorioOdontologico\obj\Debug\ConsultorioOdontologico.vbproj.GenerateResource.Cache
+D:\Micka\ConsultorioOdontologico\ConsultorioOdontologico\obj\Debug\ConsultorioOdontologico.frmAgregarHCCompleta.resources
