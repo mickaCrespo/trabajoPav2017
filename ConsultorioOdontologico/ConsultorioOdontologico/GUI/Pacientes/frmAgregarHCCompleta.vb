@@ -61,10 +61,15 @@
         Dim c As Integer = 0
 
 
-        For c = 0 To dgvHC.RowCount() - 1
-            str = "INSERT INTO HistoriaClinica(dniPaciente,fecha,idPrestacion,idUbicacion,idTipo,observaciones) VALUES( "
+        For c = 0 To dgvHC.RowCount() - 2
+            str += "INSERT INTO HistoriaClinica(dniPaciente,fecha,idPrestacion,idUbicacion,idTipo,observaciones) VALUES( "
             str += dni & ", GETDATE(), " & dgvHC.Rows(c).Cells("idPrestacion").Value & "," & dgvHC.Rows(c).Cells("idUbicacion").Value & "," & dgvHC.Rows(c).Cells("idTipo").Value & ",'" & dgvHC.Rows(c).Cells("Observaciones").Value & "')"
             str += " "
+            MsgBox(dgvHC.Rows(c).Cells("idPrestacion").Value)
+            MsgBox(dgvHC.Rows(c).Cells("idUbicacion").Value)
+            MsgBox(dgvHC.Rows(c).Cells("idTipo").Value)
+            MsgBox(dgvHC.Rows(c).Cells("Observaciones").Value)
+
         Next
         Return str
     End Function
@@ -72,8 +77,8 @@
     Private Function agregarDiagnostico(ByVal str As String) As String
         Dim c As Integer = 0
 
-        For c = 0 To dgvEnfermedades.RowCount() - 1
-            str = "INSERT INTO EnfermedadesXPaciente(dniPaciente,idEnfermedad,descripcion) VALUES("
+        For c = 0 To dgvEnfermedades.RowCount() - 2
+            str += "INSERT INTO EnfermedadesXPaciente(dniPaciente,idEnfermedad,descripcion) VALUES("
             str += dni & "," & dgvEnfermedades.Rows(c).Cells("idEnfermedad").Value & "," & dgvEnfermedades.Rows(c).Cells("Descripcion").Value & "')"
             str += " "
         Next
@@ -83,8 +88,8 @@
     Private Function agregarAlergia(ByVal str As String) As String
         Dim c As Integer = 0
 
-        For c = 0 To dgvAlergias.RowCount() - 1
-            str = "INSERT INTO AlergiasXPaciente(dniPaciente,idAlergia,descripcion) VALUES("
+        For c = 0 To dgvAlergias.RowCount() - 2
+            str += "INSERT INTO AlergiasXPaciente(dniPaciente,idAlergia,descripcion) VALUES("
             str += dni & "," & dgvAlergias.Rows(c).Cells("idAlergia").Value & "," & dgvAlergias.Rows(c).Cells("DescripcionAlergia").Value & "')"
             str += " "
         Next
@@ -92,11 +97,22 @@
     End Function
 
     Private Sub cmdGuardarCambios_Click(sender As Object, e As EventArgs) Handles cmdGuardarCambios.Click
-        Dim str As String = ""
+        Dim str As String = " "
 
-        str += agregarHC(str)
-        str += agregarDiagnostico(str)
-        str += agregarAlergia(str)
+
+        If dgvHC.RowCount() <> 1 Then
+            str = agregarHC(str)
+        End If
+
+        If dgvEnfermedades.Rows.Count() <> 1 Then
+            str = agregarDiagnostico(str)
+        End If
+
+        If dgvAlergias.RowCount() <> 1 Then
+            str += agregarAlergia(str)
+        End If
+
+
 
         MsgBox(str)
     End Sub
