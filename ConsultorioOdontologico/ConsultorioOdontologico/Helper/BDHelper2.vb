@@ -127,7 +127,7 @@ Public Class BDHelper2
 
         Dim strSQL As String = "SELECT P.idPrestacion, P.nombre FROM Prestaciones P WHERE P.idPrestacion NOT IN ("
         strSQL += "SELECT P.idPrestacion FROM Prestaciones P LEFT JOIN PrestacionesPorPlan PPP ON (P.idPrestacion = PPP.idPrestacion)"
-        strSQL += "WHERE (PPP.idObraSocial  = " & OSSeleccionada & ") AND (PPP.idPlan = " & PlanSeleccionado & ") AND PPP.activo)"
+        strSQL += "WHERE (PPP.idObraSocial  = " & OSSeleccionada & ") AND (PPP.idPlan = " & PlanSeleccionado & "))"
         Return BDHelper2.ConsultaSQL(strSQL)
     End Function
 
@@ -295,6 +295,17 @@ Public Class BDHelper2
             MsgBox("Fecha de nacimiento errónea")
             Return False
         End If
+        Return True
+    End Function
+
+    Public Shared Function validarQueNoEsteEn(ByVal elemento As String, ByVal table As Data.DataTable) As Boolean
+        For i = 0 To table.Rows.Count - 1
+            Dim name As String = table.Rows(i).Item("nombre")
+            If elemento = name Then
+                MsgBox(elemento & " ya existe en la base de datos.")
+                Return False
+            End If
+        Next
         Return True
     End Function
 

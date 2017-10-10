@@ -74,10 +74,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\Odontologo.vb" />
-    <Compile Include="GUI\Obra Social\frmAgregarAlergiaInexistente.Designer.vb">
+    <Compile Include="GUI\Pacientes\frmAgregarAlergiaInexistente.Designer.vb">
       <DependentUpon>frmAgregarAlergiaInexistente.vb</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Obra Social\frmAgregarAlergiaInexistente.vb">
+    <Compile Include="GUI\Pacientes\frmAgregarAlergiaInexistente.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Odontologos\frmAgregarEspecialidad.Designer.vb">
@@ -190,7 +190,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="GUI\Obra Social\frmAgregarAlergiaInexistente.resx">
+    <EmbeddedResource Include="GUI\Pacientes\frmAgregarAlergiaInexistente.resx">
       <DependentUpon>frmAgregarAlergiaInexistente.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Odontologos\frmAgregarEspecialidad.resx">

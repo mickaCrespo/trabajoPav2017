@@ -13,21 +13,23 @@
 
 
         If BDHelper2.validarDatos(param.ToArray()) = True Then
+            If BDHelper2.validarQueNoEsteEn(txtNombre.Text, BDHelper2.GetPrestaciones()) = True Then
 
-            Dim str As String = "INSERT INTO Prestaciones (nombre, descripcion, precio, duracion) VALUES ("
-            str += "'" & txtNombre.Text & "','" & rtbDescripcion.Text & "'," & txtPrecio.Text & "," & txtDuracion.Text & ")"
+                Dim str As String = "INSERT INTO Prestaciones (nombre, descripcion, precio, duracion) VALUES ("
+                str += "'" & txtNombre.Text & "','" & rtbDescripcion.Text & "'," & txtPrecio.Text & "," & txtDuracion.Text & ")"
 
-            BDHelper2.agregarPrestacionPorPlan(str)
-            MsgBox("La prestacion se ha registrado")
-            llenarGrid(BDHelper2.GetPrestaciones())
+                BDHelper2.agregarPrestacionPorPlan(str)
+                MsgBox("La prestacion se ha registrado")
+                llenarGrid(BDHelper2.GetPrestaciones())
 
-            txtDuracion.Text = ""
-            txtNombre.Text = ""
-            txtPrecio.Text = ""
+                txtDuracion.Text = ""
+                txtNombre.Text = ""
+                txtPrecio.Text = ""
 
+            End If
         End If
 
-        
+
 
     End Sub
 

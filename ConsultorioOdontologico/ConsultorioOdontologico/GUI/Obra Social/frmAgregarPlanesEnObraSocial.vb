@@ -22,14 +22,16 @@
 
         If BDHelper2.validarCombos(index.ToArray()) = True Then
             If BDHelper2.validarDatos(param.ToArray()) = True Then
+                If BDHelper2.validarQueNoEsteEn(txtNombrePlan.Text, BDHelper2.GetPlan(cmbOS.SelectedValue)) = True Then
 
-                Dim id As Integer = BDHelper2.GetPlan(cmbOS.SelectedValue).Rows.Count + 1
-                Dim str As String = "INSERT INTO Planes (idPlan, idObraSocial,nombre) VALUES ("
-                str += id & ", " & cmbOS.SelectedValue & ",'" & txtNombrePlan.Text & "')"
+                    Dim id As Integer = BDHelper2.GetPlan(cmbOS.SelectedValue).Rows.Count + 1
+                    Dim str As String = "INSERT INTO Planes (idPlan, idObraSocial,nombre) VALUES ("
+                    str += id & ", " & cmbOS.SelectedValue & ",'" & txtNombrePlan.Text & "')"
 
 
-                BDHelper2.agregarPlan(str)
-                MsgBox("El plan se ha registrado")
+                    BDHelper2.agregarPlan(str)
+                    MsgBox("El plan se ha registrado")
+                End If
             End If
         End If
 
