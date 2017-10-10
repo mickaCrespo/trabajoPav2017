@@ -2,7 +2,7 @@
 
 Public Class BDHelper2
 
-    Private Shared string_conexion As String = "Data Source=DESKTOP-I4BBJMS\SQLEXPRESS;Initial Catalog=db_consultorio_odontologico;User ID=sa;Password=19781996"
+    Private Shared string_conexion As String = "Data Source=MAQUIS;Initial Catalog=db_consultorio_odontologico;User ID=avisuales1;Password=avisuales1"
 
     Private Shared Function EjecutarSQL(ByVal strSql As String) As Integer
         Dim conexion As New SqlConnection
