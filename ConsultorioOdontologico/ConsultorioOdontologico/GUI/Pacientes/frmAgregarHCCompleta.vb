@@ -110,5 +110,10 @@
 
     End Sub
 
+    Private Sub frmAgregarHCCompleta_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        Me.Hide()
+        frmHistoriaClinicavb.Show()
+    End Sub
+
 
 End Class

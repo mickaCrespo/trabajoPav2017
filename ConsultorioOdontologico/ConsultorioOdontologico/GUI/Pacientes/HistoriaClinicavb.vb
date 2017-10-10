@@ -41,11 +41,16 @@
     End Sub
 
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub cmdAgregrarEntrada_Click(sender As Object, e As EventArgs) Handles cmdAgregarEntrada.Click
+        Me.Hide()
         frmAgregarHCCompleta.ShowDialog()
         llenarGridHC(BDHelper2.GetHistoriasClinicas(dni))
         llenarGridEnfermedades(BDHelper2.GetEnfermedadesDePaciente(dni))
         llenarGridAlergias(BDHelper2.GetAlergiasDePaciente(dni))
     End Sub
 
+    Private Sub frmHistoriaClinica_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        Me.Hide()
+        frmABMPacientes.Show()
+    End Sub
 End Class

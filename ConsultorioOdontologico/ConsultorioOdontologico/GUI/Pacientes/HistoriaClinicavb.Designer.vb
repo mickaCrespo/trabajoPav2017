@@ -42,7 +42,7 @@ Partial Class frmHistoriaClinicavb
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.cmdAgregarEntrada = New System.Windows.Forms.Button()
         CType(Me.dgvHC, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvEnfermedades, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvAlergias, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -186,14 +186,14 @@ Partial Class frmHistoriaClinicavb
         Me.DataGridViewTextBoxColumn3.HeaderText = "Descripción"
         Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
         '
-        'Button1
+        'cmdAgregarEntrada
         '
-        Me.Button1.Location = New System.Drawing.Point(478, 426)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(144, 23)
-        Me.Button1.TabIndex = 10
-        Me.Button1.Text = "Agregar Entrada"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.cmdAgregarEntrada.Location = New System.Drawing.Point(478, 426)
+        Me.cmdAgregarEntrada.Name = "cmdAgregarEntrada"
+        Me.cmdAgregarEntrada.Size = New System.Drawing.Size(144, 23)
+        Me.cmdAgregarEntrada.TabIndex = 10
+        Me.cmdAgregarEntrada.Text = "Agregar Entrada"
+        Me.cmdAgregarEntrada.UseVisualStyleBackColor = True
         '
         'frmHistoriaClinicavb
         '
@@ -201,7 +201,7 @@ Partial Class frmHistoriaClinicavb
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(634, 467)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.cmdAgregarEntrada)
         Me.Controls.Add(Me.dgvAlergias)
         Me.Controls.Add(Me.lblAlergias)
         Me.Controls.Add(Me.lblEnfermedades)
@@ -237,5 +237,5 @@ Partial Class frmHistoriaClinicavb
     Friend WithEvents idTipo As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents TipoDiente As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Observaciones As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents cmdAgregarEntrada As System.Windows.Forms.Button
 End Class
