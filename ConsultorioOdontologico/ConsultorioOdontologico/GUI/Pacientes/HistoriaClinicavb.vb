@@ -1,13 +1,8 @@
 ﻿Public Class frmHistoriaClinicavb
 
-
-
-
-
-
+    Dim dni As Integer = frmABMPacientes.dgvPacientes.CurrentRow.Cells(0).Value
 
     Private Sub frmHistoriaClinicavb_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim dni As Integer = frmABMPacientes.dgvPacientes.CurrentRow.Cells(0).Value
         llenarGridHC(BDHelper2.GetHistoriasClinicas(dni))
         llenarGridEnfermedades(BDHelper2.GetEnfermedadesDePaciente(dni))
         llenarGridAlergias(BDHelper2.GetAlergiasDePaciente(dni))
@@ -45,25 +40,11 @@
 
     End Sub
 
-    Private Sub cmdAgregrarAlergia_Click(sender As Object, e As EventArgs) Handles cmdAgregrarAlergia.Click
-        frmAgregrAlergiaAPaciente.ShowDialog()
-        llenarGridAlergias(BDHelper2.GetAlergiasDePaciente(frmABMPacientes.dgvPacientes.CurrentRow.Cells(0).Value))
-    End Sub
 
-    Private Sub cmdAgregarEnfermedad_Click(sender As Object, e As EventArgs) Handles cmdAgregarEnfermedad.Click
-        frmAgregarEnfermedadAPaciente.ShowDialog()
-        llenarGridEnfermedades(BDHelper2.GetEnfermedadesDePaciente(frmABMPacientes.dgvPacientes.CurrentRow.Cells(0).Value))
-
-    End Sub
-
-
-    Private Sub cmdAgregrarHC_Click(sender As Object, e As EventArgs) Handles cmdAgregrarHC.Click
-        frmAgregarHC.ShowDialog()
-        llenarGridHC(BDHelper2.GetHistoriasClinicas(frmABMPacientes.dgvPacientes.CurrentRow.Cells(0).Value))
-    End Sub
-
-    Private Sub frmHistoriaClinicavb_FormClosing1(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
-        Me.Hide()
-        frmABMPacientes.Show()
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        frmAgregarHCCompleta.ShowDialog()
+        llenarGridHC(BDHelper2.GetHistoriasClinicas(dni))
+        llenarGridEnfermedades(BDHelper2.GetEnfermedadesDePaciente(dni))
+        llenarGridAlergias(BDHelper2.GetAlergiasDePaciente(dni))
     End Sub
 End Class
