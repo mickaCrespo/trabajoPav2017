@@ -95,3 +95,6 @@ G:\TP PAV Nuevo\Micka\ConsultorioOdontologico\ConsultorioOdontologico\obj\Debug\
 G:\TP PAV Nuevo\Micka\ConsultorioOdontologico\ConsultorioOdontologico\obj\Debug\ConsultorioOdontologico.frmHistoriaClinicavb.resources
 G:\TP PAV Nuevo\Micka\ConsultorioOdontologico\ConsultorioOdontologico\obj\Debug\ConsultorioOdontologico.Resources.resources
 G:\TP PAV Nuevo\Micka\ConsultorioOdontologico\ConsultorioOdontologico\obj\Debug\ConsultorioOdontologico.vbproj.GenerateResource.Cache
+G:\TP PAV Nuevo\Micka\ConsultorioOdontologico\ConsultorioOdontologico\bin\Debug\ConsultorioOdontologico.exe
+G:\TP PAV Nuevo\Micka\ConsultorioOdontologico\ConsultorioOdontologico\bin\Debug\ConsultorioOdontologico.pdb
+G:\TP PAV Nuevo\Micka\ConsultorioOdontologico\ConsultorioOdontologico\bin\Debug\ConsultorioOdontologico.xml

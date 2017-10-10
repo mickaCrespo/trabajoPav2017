@@ -125,7 +125,7 @@
                 End If
                 str += "fechaNacimiento = CONVERT(DATE,'" & mtxtDOB.Text & "', 103 ),telcontacto = '" & mtxtTelCont.Text & "' WHERE dniPaciente =" & mtxtDNI.Text
                 BDHelper2.modificarPaciente(str)
-                MsgBox(str)
+
                 llenarGrid(BDHelper2.GetPacientes())
                 MsgBox("La informacion del paciente ha sido actualizada")
 
@@ -189,4 +189,11 @@
     End Sub
 
 
+
+    Private Sub cmbPlan_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles cmbPlan.SelectionChangeCommitted
+        If cmbOS.SelectedIndex = 0 And cmbPlan.SelectedIndex = 0 Then
+            txtNroAfiliado.Text = BDHelper2.GetPacientes().Rows.Count + 1
+            txtNroAfiliado.Enabled = False
+        End If
+    End Sub
 End Class

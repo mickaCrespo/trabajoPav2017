@@ -47,4 +47,5 @@
         llenarGridEnfermedades(BDHelper2.GetEnfermedadesDePaciente(dni))
         llenarGridAlergias(BDHelper2.GetAlergiasDePaciente(dni))
     End Sub
+
 End Class
